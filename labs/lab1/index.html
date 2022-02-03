@@ -17,36 +17,44 @@
 
 <body>
 
+  <!-- Logo and navigation bar -->
+  <nav class="navbar navbar-expand-sm navbar_coca_cola">
 
+    <div class="container-fluid">
+      <!-- Brand/logo -->
+      <div class="logo">
+        <a class="navbar-brand" href="#">
+          <h1>1</h1>
+          <h1>oca</h1>
+          <h2>Cola</h2>
+          <h3>Journey</h3>
+          <p>Refrehing the world, one story at a time</p>
+        </a>
+      </div>
 
-  <!--Logo and navigation bar-->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <!-- <div class="container-fluid">-->
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">Coca Cola Journey</a>
-    <!-- Collapsible Navbar Menu Icon -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Collapsible Navbar Menu Icon -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!--Link Menu item button to the links class navbar-collapse selector-->
-    <div class="collapse navbar-collapse">
-      <!-- Links -->
-      <ul class="navbar-nav ml-auto">
-        <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Drinks</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">coca cola</a></li>
-            <li><a class="dropdown-item" href="#">Sprite</a></li>
-            <li><a class="dropdown-item" href="#">Dr Pepper</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- </div> -->
+      <!--Link Menu item button to the links class navbar-collapse selector-->
+      <div class="collapse navbar-collapse" id="navbarSupportContent">
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Drinks</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">coca cola</a></li>
+              <li><a class="dropdown-item" href="#">Sprite</a></li>
+              <li><a class="dropdown-item" href="#">Dr Pepper</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -58,17 +66,19 @@
       <div id="main_3d_image">
 
         <div id="main_text" class="col-xs-12 col-sm-4">
-          <h2>Coca Cola Great Britain</h2>
+          <h2 id="title">Coca Cola Great Britain</h2>
           <h3>Founded by Dr John's Pemberton</h3>
           <p>The Coca Cola Company is the world's leading manufacturer, marketer and distributor of non-alcoholic
             beverage concentrates and syrups, and produces nearly 400 brands.</p>
+            <img src="assets/images/main_3D.jpg" alt="main_3D">
         </div>
-        <img src="assets/images/main_3D.jpg" alt="main_3D">
+     
       </div>
     </div>
 
 
     <br> <!-- Temporary break until we style the template -->
+    
     <!-- Row of cards on the grid-->
     <div class="row">
       <!-- Coca Cola column-->
@@ -130,16 +140,16 @@
 
   <!--And, finally a footer that contains some copyright information and links constructed from awesome fonts.-->
   <!--3D App footer-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm footer">
     <div class="container-fluid">
       <div class="navbar-text float-left copyright">
         <p><span class="align-baseline"></span>&copy 2021 Mobile Web 3D Applications </span></p>
       </div>
       <div class="navbar-text float-right social">
-        <a href="#"><i class="fab fa-facebook-square fa-2x" </a>
-            <a href="#"><i class="fab fa-twitter  fa-2x" </a>
-                <a href="#"><i class="fab fa-google-plus fa-2x" </a>
-                    <a href="#"><i class="fab fa-github-square fa-2x" </a>
+        <a href="#"><i class="fab fa-facebook-square fa-2x" style="font-size:20px; color: red;"</a>
+            <a href="#"><i class="fab fa-twitter  fa-2x" style="font-size:20px; color: green;"</a>
+                <a href="#"><i class="fab fa-google-plus fa-2x" style="font-size:20px; color: blue;"</a>
+                    <a href="#"><i class="fab fa-github-square fa-2x" style="font-size:20px; color: yellow;"</a>
       </div>
     </div>
   </nav>
