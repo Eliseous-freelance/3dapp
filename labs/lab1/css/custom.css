@@ -280,5 +280,63 @@ There is plenty more styling to do than indicated here, in mobile it still defau
    
 }
 
+/* Small devices (landscape phones, 576px and up)
+*/
+@media (min-width: 576px) {
+
+   /* CSS rule to style the footer */
+   .footer {
+       background-color: #257600;
+       height: 60px;
+   }
+   
+   .navbar-text > a {
+       font-size: 10px;
+   }
+   
+   .navbar-text > p {
+       color: rgb(228, 75, 15);
+       font-size: 18px;
+   }
+   
+   .copyright {
+       padding-top: 20px;
+   }
+   
+   .social {
+       padding-top: 7px;
+   }
+   }
+
+   .social {
+      padding-top: 0px;
+      width: 30%;   
+  }
+
+  .fa-twitter-square:before {
+      content: "\f081";
+      color: green;
+      font-size: 1em;
+  }
+
+  .fa-github-square:before {
+      content: "\f092"; 
+      color: yellow;
+      font-size: 1em;
+  }
+
+  .fa-google-plus-square:before {
+      content: "\f0d4"; 
+      color: blue;
+      font-size: 1em;
+  }
+
+  .fa-facebook-square:before {
+      content: "\f082";
+      color: red;
+      font-size: 1em; 
+  }
+
+   
 
 .img-thumbnail {}
