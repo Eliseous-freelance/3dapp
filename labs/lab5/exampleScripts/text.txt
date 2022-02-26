@@ -1,0 +1,3 @@
+PHP: Server-side, grabs the data (model)
+JavaScript: Requests and manipulates the data (controller)
+HTML: presents the data (view)
