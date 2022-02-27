@@ -1,39 +1,28 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap_css/bootstrap.css">
-  <!-- Custom CSS-->
-  <link rel="stylesheet" href="css/custom.css">
-  <!--Font Awesome 5-->
-  <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
-    <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!-- 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"  ></script>
-    -->
-    <script src="bootstrap_js/jquery-3.5.1.js"></script>
-    <script src="bootstrap_js/popper.min.js"></script>
-    <script src="bootstrap_js/bootstrap.js"></script>
-    <!-- title -->
-    <title>Coca Cola 3D App template</title>
-    <!-- x3d models css -->
-    <link rel='stylesheet' type='text/css' href='css/x3dom.css'>
-    <!-- Include the x3dom JavaScript -->
-    <script type='text/javascript' src='js/x3dom.js'></script>
 
+  <!--Forawesome CSS-->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- title -->
+  <title>Coca Cola 3D App template</title>
+  <!-- x3d models css -->
+  <link rel='stylesheet' type='text/css' href='css/x3dom.css'>
+
+    <!-- Custom CSS needs to be last to override any bootstrap or x3dom xss as necessary -->
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
   <!-- Logo and navigation bar -->
   <nav class="navbar sticky-top navbar-expand-sm navbar_coca_cola">
-    <div class="container"> <!--OR FLUID?????-->
+    <div class="container-fluid"> 
       <!-- Brand/logo -->
       <div class="logo">
         <a class="navbar-brand" href="#">
@@ -53,32 +42,28 @@
       <!--Link Menu item button to the links class navbar-collapse selector-->
       <div class="collapse navbar-collapse" id="navbarSupportContent">
         <!-- Links -->
-        <ul class="navbar-nav ml-auto">
-          <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
+        <ul class="navbar-nav ml-auto"><!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="About Web 3d Applications" data-content="3D Apps is a final year and postgraduate module...">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
           <!-- Dropdown -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Drinks</a>
-            <ul class="dropdown-menu">
+            <div class="dropdown-menu">
               <li><a class="dropdown-item" href="#">coca cola</a></li>
               <li><a class="dropdown-item" href="#">Sprite</a></li>
               <li><a class="dropdown-item" href="#">Dr Pepper</a></li>
+            </div>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
-          </li>
-        </ul>
       </div>
     </div>
   </nav>
-
-  <br> <!-- Temporary break until we style the template -->
-  <!-- Main body - It has a background image across 1 column, 
-  followed by 3 columns holding cards in a row for the 3 images and associated texts-->
+<!-- This is the coke page-->
   <div class="container-fluid main_contents">
       <!--row to hold two cards to hold 1) the X3D model and 2) the gallery-->
     <div class="row">
       <!--column to hold teh X3D model-->
-      <div class="col-sm-10">
+      <div class="col-sm-9">
         <div class="card text-left">
           <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
@@ -93,72 +78,66 @@
               </li>
             </ul>
           </div>
+          <!--Boostrap 4 card body to hold information about the X3D model-->
+          <div class="card-body">
+            <h4 class="card-title">Coca Cola X3D Model</h4>
 
-          <!-- Place the X3D code here-->
-          <!-- Temporary image instead of -->
-            <div id="main_3d_image"></div>  
-            <!-- Bootstrap 4 card body to hold information about the X3D model-->
-            <div class="card-body">
-              <h4 class="card-title"> Coca Cola X3D Model</h4>
+            <!-- Place the X3D code here-->
+            <!-- Temporary image instead of <div id="main_3d_image"</div>-->
+              <div class="model3D">
+                <x3d>
+                  <scene>
+                    <inline url="assets/x3d/coke.x3d"></inline>
+                  </scene>
+                </x3d>
+              </div>
+
               <p class="card-text">This X3D model of the coke can has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.</p>
-              <a href="#" class="btn btn-primary btn-reponsive camera-font">Front</a>
-              <a href="#" class="btn btn-secondary btn-reponsive camera-font">Back</a>
-              <a href="#" class="btn btn-success btn-reponsive camera-font">Left</a>
-              <a href="#" class="btn btn-danger btn-reponsive camera-font">Right</a>
-      </div>
-    </div>
+              <h5 class="card-subtitle">Camera Views</h5>
+              <div class="camera-btns">
+                  <p class="card-text">These buttons select a range of X3D model viewpoints</p>
+
+                <div class="btn-group ">
+                    <a href="#" class="btn btn-primary btn-responsive camera-font">Front</a>
+                    <a href="#" class="btn btn-secondary btn-responsive camera-font">Back</a>
+                    <a href="#" class="btn btn-success btn-responsive camera-font">Left</a>
+                    <a href="#" class="btn btn-danger btn-responsive camera-font">Right</a>
+                    <a href="#" class="btn btn-warning btn-responsive camera-font">Top</a>
+                    <a href="#" class="btn btn-outline-dark disabled btn-responsive camera-font">Off</a>
+   </div>
+</div>
+
+</div>
+</div>
+</div>
 
 <!-- column to hold 3D Image gallery-->
-<div class="col-sm-2">
+<div class="col-sm-3">
   <div class="card text-left">
-    <div class="card-header">
-      3D Image gallery
+    <div class="card-header gallery-header">
+      Gallery
     </div>
-    <!-- Coke column-->
+    <div class="card-body">
+      <h4 class="card-title">3D Image Gallery</h4>
+    <!-- Coke image-->
     <a href="coke.html">
       <img class="card-img-top img-fluid img-thumbnail" src="assets/images/coca_cola.jpg" alt="coca cola">
     </a>
-    <div class="card-body">
-      <h3 class="card-title">Coca cola</h3>
-      <p class="card-text">In 1886 in New York Harbour, workers were constructing the Statue of Liberty. Eight
-          hundred miles away, another great Amaerican symbol was about to be unveiled. Like many people who change
-          history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he
-          stirred up a fragrant, caramel-coloured liquid and, when it was done ... booyah! He had invented Coca
-          Cola.</p>
-    </div>
-    <!-- Sprite column-->
+    <!-- Sprite image-->
     <a href="sprite.html">
       <img class="card-img-top img-fluid img-thumbnail" src="assets/images/sprite.jpg" alt="Sprite">
     </a>
-    <div class="card-body">
-      <h3 class="card-title">Sprite</h3>
-      <p class="card-text">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is now the world's
-        leading lemon and lime flavoured soft drink and is sold in more than 190 different countries. Sprite Zero,
-        part of Coca Cola's no sugar Zero range, offers the delicious lemon lime taste of Sprite without the sugar
-        or calories.</p>
-    </div>
-    <!-- Dr Pepper column-->
+    <!-- Dr Pepper image-->
     <a href="pepper">
-            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg" alt="Dr Pepper">
-          </a>
-          <div class="card-body">
-            <h3 class="card-title">Dr Pepper</h3>
-            <p class="card-text"> Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well over
-              a century amd it's still the same, with that distinctive flavour you just can't quite put your toungue on.
-              It was created by Texas pharmacist Charles Alderton in 1885. Hw gave a sample of the first ever batch to
-              Wade Morrison, a local shop owner, and Mr Morrison instantly agreed to stock the drink. The distinctive,
-              bold taste of Dr Pepper has been popular ever since. </p>
-          </div>
+      <img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg" alt="Dr Pepper">
+    </a>
+        
         <p class="card-text">3D images rendered in Blender 2022</p>
         </div>
       </div>
     </div>
   </div>
 
-  </div>
-      </div>
-  </div>
-</div>
 <!-- Row to hold 1 card to hold the coca cola descriptive text, etc.-->
 <div class="row">
   <!-- Coca Cola Column -->
@@ -176,36 +155,10 @@
     </div>
 </div>
 
-<h5 class="card-subtitle">Camera Views</h5>
-                  <div class="camera-btns">
-                      <p class="card-text">These buttons select a range of X3D model viewpoints</p>
-                      <div class="btn-group ">
-                          <a href="#" class="btn btn-primary btn-responsive camera-font">Front</a>
-                          <a href="#" class="btn btn-secondary btn-responsive camera-font">Back</a>
-                          <a href="#" class="btn btn-success btn-responsive camera-font">Left</a>
-                          <a href="#" class="btn btn-danger btn-responsive camera-font">Right</a>
-                          <a href="#" class="btn btn-warning btn-responsive camera-font">Top</a>
-                          <a href="#" class="btn btn-outline-dark disabled btn-responsive camera-font">Off</a>
-                     </div>
-                  </div>
-  <!--Boostrap 4 card body to hold information about the X3D model-->
-  <div class="card-body">
-    <h4 class="card-title">Coca Cola X3D Model</h4>
-
-    <!-- Place the X3D code here-->
-    <!-- Temporary image instead of <div id="main_3d_image"</div>-->
-      <div class="model3D">
-        <x3d>
-          <scene>
-            <inline url="assets/x3d/coke.x3d"></inline>
-          </scene>
-        </x3d>
-      </div>
-
-    <p class="card-text">This X3D mdoel of the coke can has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.</p>
-    </div>
-
 </div> <!--End main_contents container-fluid-->
+
+
+
   <!--3D App footer-->
   <nav class="navbar navbar-expand-sm footer">
     <div class="container-fluid">
@@ -220,6 +173,17 @@
       </div>
     </div>
   </nav>
+
+    <!--Font Awesome 5-->
+    <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
+  
+    <!-- Include the x3dom JavaScript -->
+    <script type='text/javascript' src='js/x3dom.js'></script>
+    <!--Bootstrap js library-->
+    <script src="bootstrap_js/jquery-3.5.1.js"></script>
+    <script src="bootstrap_js/popper.min.js"></script>
+    <script src="bootstrap_js/bootstrap.js"></script>
+    
 </body>
 
 </html>
