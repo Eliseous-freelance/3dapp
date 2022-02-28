@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap_css/bootstrap.css">
+
+  <!--Forawesome CSS-->
+  <link rel="stylesheet" href="assets/css/all.css">
+
+  <!-- title -->
+  <title>Coca Cola 3D App template</title>
+  <!-- x3d models css -->
+  <link rel='stylesheet' type='text/css' href='assets/css/x3dom.css'>
+
+    <!-- Custom CSS needs to be last to override any bootstrap or x3dom xss as necessary -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body id="theme">
+  <!-- Logo and navigation bar -->
+  <nav class="navbar sticky-top navbar-expand-sm navbar_coca_cola">
+    <div class="container-fluid"> 
+      <!-- Brand/logo -->
+      <div class="logo">
+        <a class="navbar-brand" href="#">
+          <h1>1</h1>
+          <h1>oca</h1>
+          <h2>Cola</h2>
+          <h3>Journey</h3>
+          <p>Refrehing the world, one story at a time</p>
+        </a>
+      </div>
+
+      <!-- Collapsible Navbar Menu Icon -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!--Link Menu item button to the links class navbar-collapse selector-->
+      <div class="collapse navbar-collapse" id="navbarSupportContent">
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto"> <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" aria-expanded="false">Drinks</a>
+            <div class="dropdown-menu">
+              <li><a class="dropdown-item" id="coke" style="display: none;" href="javascript:swap('coke')">coca cola</a></li>
+              <li><a class="dropdown-item" id="sprite" style="display: none;" href="javascript:swap('sprite')">Sprite</a></li>
+              <li><a class="dropdown-item" id="pepper" style="display: none;" href="javascript:swap('pepper')">Dr Pepper</a></li>
+            
+          
+            <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a></li>
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- This is the coke page-->
+  <div class="container-fluid main_contents">
+      <!--row to hold two cards to hold 1) the X3D model and 2) the gallery-->
+    <div class="row">
+      <!--column to hold teh X3D model-->
+      <div class="col-sm-9">
+        <div class="card text-left">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link" href="coke.html">Coke</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sprite.html">Sprite</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pepper.html">Dr Pepper</a>
+              </li>
+            </ul>
+          </div>
+          <!--Boostrap 4 card body to hold information about the X3D model-->
+          <div class="card-body">
+            <h4 class="card-title">Coca Cola X3D Model</h4>
+
+            <!-- Place the X3D code here-->
+            <!-- Temporary image instead of <div id="main_3d_image"</div>-->
+              <div class="model3D">
+                <x3d>
+                  <scene>
+                    <inline url="assets/x3d/coke.x3d"></inline>
+                  </scene>
+                </x3d>
+              </div>
+
+              <p class="card-text">This X3D model of the coke can has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.</p>
+              <h5 class="card-subtitle">Camera Views</h5>
+              <div class="camera-btns">
+                  <p class="card-text">These buttons select a range of X3D model viewpoints</p>
+
+                <div class="btn-group ">
+                    <a href="#" class="btn btn-primary btn-responsive camera-font">Front</a>
+                    <a href="#" class="btn btn-secondary btn-responsive camera-font">Back</a>
+                    <a href="#" class="btn btn-success btn-responsive camera-font">Left</a>
+                    <a href="#" class="btn btn-danger btn-responsive camera-font">Right</a>
+                    <a href="#" class="btn btn-warning btn-responsive camera-font">Top</a>
+                    <a href="#" class="btn btn-outline-dark disabled btn-responsive camera-font">Off</a>
+   </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- column to hold 3D Image gallery-->
+<div class="col-sm-3">
+  <div class="card text-left">
+    <div class="card-header gallery-header">
+      Gallery
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">3D Image Gallery</h4>
+    <!-- Coke image-->
+    <a href="coke.html">
+      <img class="card-img-top img-fluid img-thumbnail" src="assets/images/coca_cola.jpg" alt="coca cola">
+    </a>
+    <!-- Sprite image-->
+    <a href="sprite.html">
+      <img class="card-img-top img-fluid img-thumbnail" src="assets/images/sprite.jpg" alt="Sprite">
+    </a>
+    <!-- Dr Pepper image-->
+    <a href="pepper">
+      <img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg" alt="Dr Pepper">
+    </a>
+        
+        <p class="card-text">3D images rendered in Blender 2022</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!--simple button-->
+   <p><input type="button" value="Click me!" onclick="changeLook()"/>to restyle the page.</p>
+   <p id="para1">Some text here</p>
+   <button onclick="changeColor('green');">green</button>
+   <button onclick="changeColor('red');">red</button>
+
+
+
+
+   <!--click to activate the counter-->
+   <p>
+    Click <a href="javascript:countUp()">here</a> to cout:
+    <div id="result"></div>
+</p>
+
+
+<!-- Row to hold 1 card to hold the coca cola descriptive text, etc.-->
+<div class="row">
+  <!-- Coca Cola Column -->
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Coca Cola</h3>
+        <p class="card-text">Atlanta Beginners: It was 1886, and in New York Harbour, workers were constructing the Statue of Liberty. Eight hundred miles away, another great American symbol was about to be unveiled.
+          Like many people who change history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed
+          - this new drink was something special.
+          So, Jacobs' Pharmacy put it on sale for five cents (about 3p) a glass.</p>
+          <a href="#" class="btn btn-primary">Find out more...</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+</div> <!--End main_contents container-fluid-->
+
+
+
+  <!--3D App footer-->
+  <nav class="navbar navbar-expand-sm footer">
+    <div class="container-fluid">
+      <div class="navbar-text float-left copyright">
+        <p><span class="align-baseline"><span>&copy 2021 Mobile Web 3D Applications </span></p>
+      </div>
+      <div class="navbar-text float-right social">
+        <a href="#"><i class="fab fa-facebook-square fa-2x fa-pull-right" style="font-size:20px; color: red;"</a>
+            <a href="#"><i class="fab fa-twitter  fa-2x fa-pull-right" style="font-size:20px; color: green;"</a>
+                <a href="#"><i class="fab fa-google-plus fa-2x fa-pull-right" style="font-size:20px; color: blue;"</a>
+                    <a href="#"><i class="fab fa-github-square fa-2x fa-pull-right" style="font-size:20px; color: yellow;"</a>
+      </div>
+    </div>
+  </nav>
+
+    <!--Font Awesome 5-->
+    <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
+  
+    <!-- Include the x3dom JavaScript -->
+    <script type='text/javascript' src='js/x3dom.js'></script>
+
+    <!--Bootstrap js library-->
+    <script src="bootstrap_js/jquery-3.5.1.js"></script>
+    <script src="bootstrap_js/popper.min.js"></script>
+    <script src="bootstrap_js/bootstrap.js"></script>
+    <!-- Include custom JavaScript -->
+    <script type='text/javascript' src='js/custom.js'></script>
+    <script type="text/javascript" src="js/jsContentSwap.js"></script>
+</body>
+
+</html>
+
+
+
+
