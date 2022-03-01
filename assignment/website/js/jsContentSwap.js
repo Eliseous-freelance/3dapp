@@ -1,32 +1,46 @@
-var counter =0;
-function swap(selected){
-        // <!-- First don t display all div id contents -->
-    document.getElementById('home').style.display = 'none';
-    document.getElementById('coke').style.display = 'none';
-    document.getElementById('sprite').style.display = 'none';
-    document.getElementById('pepper').style.display = 'none';
+// JavaScript Document
+var counter = 0;
 
-    // <!-- Then display the selected div id contents -->
-    document.getElementById(selected).style.display = 'block';
+function swap(selected) {
+	// First do not display all div id contents
+	document.getElementById('home').style.display = 'none';
+	document.getElementById('coke').style.display = 'none';
+	document.getElementById('sprite').style.display = 'none';
+	document.getElementById('pepper').style.display = 'none';
+	
+	// Then display the selected div id contents	
+	document.getElementById(selected).style.display = 'block';
 }
-function changeLook(){
-    // <!-- used to change the style dynamically -->
-    document.getElementById('theme').style.backgroundColor = '#770000';
-    document.getElementById('theme').style.fontFamily = 'arial, sans-serif';
-    document.getElementById('theme').style.color = 'white';
-}
-function countUp(){
-    //<!-- simple incremental counter -->
-    counter += 1;
-    //<!-- assign the counter result to the inn html of the result id div tag -->
-    document.getElementById('result').innerHTML = counter;
 
-    /*
-        * The countUP example could be adapted to change a texture or colour on your 3D model — 
-        * you will find examples that do just this on www.x3dom.org, or you could adapt it to cycle through web page styles or brands in combination with the changeLook function. 
-        */
+function changeLook() {
+	counter += 1;
+	switch (counter) {
+        case 1:
+            document.getElementById('bodyColor').style.backgroundColor = 'lightblue';
+			document.getElementById('headerColor').style.backgroundColor = '#FF0000';
+			document.getElementById('footerColor').style.backgroundColor = '#FF9900';
+            break;
+        case 2:
+			document.getElementById('bodyColor').style.backgroundColor = '#FF6600';
+			document.getElementById('headerColor').style.backgroundColor = '#FF9999';
+			document.getElementById('footerColor').style.backgroundColor = '#996699';
+            break;
+        case 3:
+			document.getElementById('bodyColor').style.backgroundColor = 'coral';
+			document.getElementById('headerColor').style.backgroundColor = 'darkcyan';
+			document.getElementById('footerColor').style.backgroundColor = 'darksalmom';
+            break;
+        case 4:
+            counter = 0;
+			document.getElementById('bodyColor').style.backgroundColor = 'lightgrey';
+			document.getElementById('headerColor').style.backgroundColor = 'chocolate';
+			document.getElementById('footerColor').style.backgroundColor = 'dimgrey';
+            break;
+    }
 }
-function changeColor(newColor){
-    var elem = document.getElementById("para1");
-    elem.style.color = newColor;
+
+function changeBack() {
+	document.getElementById('bodyColor').style.backgroundColor = '#FFFFFF';
+	document.getElementById('headerColor').style.backgroundColor = 'rgba(175,0,0,1)';
+	document.getElementById('footerColor').style.backgroundColor = 'rgba(175,0,0,1)';
 }

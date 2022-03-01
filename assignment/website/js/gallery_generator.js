@@ -11,7 +11,7 @@ var response; //this variable is also a string and is used temporarily to store 
 
 $(document).ready(function(){
     //set up the path to the PHP function that reads the image directory to find the thumbnail file names
-    var send = "hook.php";
+    var send = "../php/hook.php";
     //open the connection to the web server
     xmlHttp.open("GET", send, true);
     //tell the server that the clinet has no outgoing message, i.e., we are sending nothing to the server
