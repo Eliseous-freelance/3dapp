@@ -38,12 +38,12 @@
       </div>
 
       <!-- Collapsible Navbar Menu Icon -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportContent">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!--Link Menu item button to the links class navbar-collapse selector-->
-      <div class="collapse navbar-collapse" id="navbarSupportContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Links -->
         <ul class="navbar-nav ml-auto"> <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
@@ -51,14 +51,14 @@
 
           <!-- Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" aria-expanded="false">Drinks</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Drinks</a>
             <div class="dropdown-menu">
-              <li><a class="dropdown-item" id="coke" style="display: none;" href="javascript:swap('coke')">coca cola</a></li>
-              <li><a class="dropdown-item" id="sprite" style="display: none;" href="javascript:swap('sprite')">Sprite</a></li>
-              <li><a class="dropdown-item" id="pepper" style="display: none;" href="javascript:swap('pepper')">Dr Pepper</a></li>
+              <a class="dropdown-item" id="coke" style="display: none;" href="javascript:swap('coke')">coca cola</a>
+              <a class="dropdown-item" id="sprite" style="display: none;" href="javascript:swap('sprite')">Sprite</a>
+              <a class="dropdown-item" id="pepper" style="display: none;" href="javascript:swap('pepper')">Dr Pepper</a>
             
           
-            <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a></li>
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a>
           </div>
           </li>
         </ul>
@@ -244,7 +244,7 @@
 
    <!--click to activate the counter-->
    <p>
-    Click <a href="javascript:countUp()">here</a> to cout:
+    Click <a href="javascript:countUp()">here</a> to count:
     <div id="result"></div>
 </p>
 
@@ -275,8 +275,10 @@
 
 
   <!--3D App footer-->
-  <nav id="footerColor" class="navbar navbar-expand-sm footer">
+  <nav class="navbar navbar-expand-sm footer">
     <div class="container-fluid">
+
+      <!--
       <div class="navbar-text float-left copyright">
         <p>
           <span class="align-baseline"><span>&copy 2021 Mobile Web 3D Applications </span>
@@ -287,13 +289,13 @@
 
        
       </div>
+-->
+      <div class="social ml-auto">
 
-      <div class="navbar-text float-right social">
-
-        <a href="#"><i class="fab fa-facebook-square fa-2x fa-pull-right" style="font-size:20px; color: red;"</a>
-        <a href="#"><i class="fab fa-twitter  fa-2x fa-pull-right" style="font-size:20px; color: green;"</a>
-        <a href="#"><i class="fab fa-google-plus fa-2x fa-pull-right" style="font-size:20px; color: blue;"</a>
-        <a href="#"><i class="fab fa-github-square fa-2x fa-pull-right" style="font-size:20px; color: yellow;"</a>
+        <a href="#"><i class="fab fa-github-square fa-2x fa-pull-right"></i></a>
+        <a href="#"><i class="fab fa-google-plus-square fa-2x fa-pull-right"></i></a>
+        <a href="#"><i class="fab fa-twitter-square fa-2x fa-pull-right"></i></a>
+        <a href="#"><i class="fab fa-facebook-square fa-2x fa-pull-right"></i></a>
       </div>
     </div>
   </nav>
