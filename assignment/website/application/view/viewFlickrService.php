@@ -5,9 +5,6 @@
     <meta charset="UFT-8">
     <title>Test view - flickr Web Service</title>
 
-    <!-- FlickrService CSS -->
-    <link rel="stylesheet" href="../../assets/css/flickrService.css">
-
 </head>
 <body>
     <h1>Flickr Web Service</h1>

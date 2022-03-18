@@ -85,5 +85,13 @@ class Model{
         //send the response back to the view
         return $result;
     }
+    public function dbDrinkDetails(){
+        //
+    }
+
+    public function dbGetBrand(){
+        //return the Brand Names
+        return array("_", "Coke", "Coke Light", "Coke Zero", "Sprite", "Dr Pepper", "Fanta");
+    }
 }
 ?>

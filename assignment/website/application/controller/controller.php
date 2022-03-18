@@ -1,4 +1,8 @@
 <?php
+include './debug/ChromePhp.php';
+ChromePhp::log('controller.php: Hello World');
+ChromePhp::log($_SERVER);
+
 //Create the controller class for the MVC design pattern
 class Controller {
 
@@ -35,6 +39,29 @@ class Controller {
         echo "Data retrieval function";
         $data = $this->model->dbGetData();
         $this->load->view('view3DAppData', $data);
+    }
+
+    //New methods for part C of Lab 7 tutorial, which use AJAX
+    //Flickr API
+    function apiGetFlickrService(){
+        $this->load->view('viewFlickrService');
+    }
+
+    //API call to read JSON data from a JSON file
+    function apiGetJson(){
+        $this->load->view('viewJson');
+    }
+
+    //API call to select 3D images
+    function apiLoadImage(){
+        //get the brand data from the (this) Model using the dbGetbrand() meyhod in this Model class
+        //ChromePhp::warn('controller.php: [apiLoadImage] Get the Brand data');
+        $data = $this->model->dbGetBrand();
+        //note, the view Drinks.php view being loaded here calls a new model
+        //called modelDrinkDetails.php, which is not part of the Model class
+        //it is a separate model illustrating that you can have many models
+        //ChromePhp::log($data);
+        $this->load->view('viewDrinks', $data);
     }
 }
 ?>
