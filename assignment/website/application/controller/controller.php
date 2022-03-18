@@ -55,12 +55,12 @@ class Controller {
     //API call to select 3D images
     function apiLoadImage(){
         //get the brand data from the (this) Model using the dbGetbrand() meyhod in this Model class
-        //ChromePhp::warn('controller.php: [apiLoadImage] Get the Brand data');
+        ChromePhp::warn('controller.php: [apiLoadImage] Get the Brand data');
         $data = $this->model->dbGetBrand();
         //note, the view Drinks.php view being loaded here calls a new model
         //called modelDrinkDetails.php, which is not part of the Model class
         //it is a separate model illustrating that you can have many models
-        //ChromePhp::log($data);
+        ChromePhp::log($data);
         $this->load->view('viewDrinks', $data);
     }
 }

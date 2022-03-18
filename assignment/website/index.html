@@ -59,6 +59,7 @@
               <a class="dropdown-item" id="coke" style="display: none;" href="javascript:swap('coke')">coca cola</a>
               <a class="dropdown-item" id="sprite" style="display: none;" href="javascript:swap('sprite')">Sprite</a>
               <a class="dropdown-item" id="pepper" style="display: none;" href="javascript:swap('pepper')">Dr Pepper</a>
+              <a class="dropdown-item" id="fanta" style="display: none;" href="javascript:swap('fanta')">Fanta</a>
 
               <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a>
             </div>
@@ -81,7 +82,7 @@
             <h3>Founded by Dr John's Pemberton</h3>
             <p>The Coca Cola Company is the world's leading manufacturer, marketer and distributor of non-alcoholic
               beverage concentrates and syrups, and produces nearly 400 brands.</p>
-            <img src="assets/images/main_3D.jpg" alt="main_3D">
+            <img src="assets/images/gallery/main_3D.jpg" alt="main_3D">
           </div>
         </div>
       </div>
@@ -92,9 +93,7 @@
       <!-- Coca Cola column-->
       <div class="col-xs-12 col-sm-6">
         <div class="card">
-          <a href="#">
-            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/coca_cola.jpg" alt="coca cola">
-          </a>
+          <a href="#"><img class="card-img-top img-fluid img-thumbnail" src="assets/images/gallery/coca_cola.jpg" alt="coca cola"></a>
           <div class="card-body">
             <h3 class="card-title">Coca cola</h3>
             <p class="card-text">In 1886 in New York Harbour, workers were constructing the Statue of Liberty. Eight
@@ -110,9 +109,7 @@
       <!-- Sprite column-->
       <div class="col-xs-12 col-sm-6">
         <div class="card">
-          <a href="#">
-            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/sprite.jpg" alt="Sprite">
-          </a>
+          <a href="#"><img class="card-img-top img-fluid img-thumbnail" src="assets/images/gallery/sprite.jpg" alt="Sprite"></a>
           <div class="card-body">
             <h3 class="card-title">Sprite</h3>
             <p class="card-text">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is now the world's
@@ -130,9 +127,7 @@
       <!-- Dr Pepper Column-->
       <div class="col-xs-12 col-sm-6">
         <div class="card">
-          <a href="#">
-            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg" alt="Dr Pepper">
-          </a>
+          <a href="#"><img class="card-img-top img-fluid img-thumbnail" src="assets/images/gallery/dr_pepper.jpg" alt="Dr Pepper"></a>
           <div class="card-body">
             <h3 class="card-title">Dr Pepper</h3>
             <p class="card-text"> Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well over
@@ -148,9 +143,7 @@
       <!-- Fanta Column-->
       <div class="col-xs-12 col-sm-6">
         <div class="card">
-          <a href="#">
-            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/fanta.png" alt="fanta">
-          </a>
+          <a href="#"><img class="card-img-top img-fluid img-thumbnail" src="assets/images/gallery/fanta.png" alt="fanta"></a>
           <div class="card-body">
             <h3 class="card-title">Fanta</h3>
             <p class="card-text"> We're all born playful creatures. But the older we become, the less permission we give
@@ -174,16 +167,12 @@
 
       <!-- Style and reset style buttons-->
       <div class="navbar-text float-left">
-        <a href="javascript:changeLook()">Style</a>
-        <a href="javascript:changeBack()">Reset style</a>
+        <button onclick="changeLook();">Style</button>
+        <button onclick="changeBack();">Reset style</button>
       </div>
 
-         <!--simple button-->
-   <p><input type="button" value="Click me!" onclick="changeLook()"/>to restyle the page.</p>
-   <p id="para1">Some text here</p>
-   <button onclick="changeColor('green');">green</button>
-   <button onclick="changeColor('red');">red</button>
-   
+
+
       <!-- links to socials -->
       <div class="social ml-auto">
         <a href="https://github.com/Eliseous-freelance/3dapp.git"><i
@@ -215,7 +204,7 @@
 
   <!-- Custom JavaScript -->
   <script type='text/javascript' src='js/custom.js'></script>
-  <script type="text/javascript" src="js/jsContentSwap.js"></script>
+  <script type="text/javascript" src="js/contentSwap.js"></script>
 </body>
 
 </html>
