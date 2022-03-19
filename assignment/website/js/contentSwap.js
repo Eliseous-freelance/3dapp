@@ -13,21 +13,6 @@ function swap() {
 }
 
 /**
- * navigating main_content to other pages
- */
-function swapMainContent(destinationPage){
-    allowedPages = ["cocaColaPage", "fantaPage", "spritePage", "DrPepperPage"]
-    pages = ["viewCocaCola.php", "viewFanta.php", "viewSprite.php", "viewPepper.php"]
-    for (let i=0;i<allowedPages.length;i++){
-        if(destinationPage == allowedPages[i]){
-            destinationPage = pages[i]
-        }
-    }
-
-    document.getElementById(mainContents).style.display = document.getElementById(destinationPage)
-}
-
-/**
  * it changes the look of the body
  */
 function changeLook() {

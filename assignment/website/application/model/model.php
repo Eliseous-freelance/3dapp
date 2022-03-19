@@ -10,12 +10,15 @@ $brandName = $_GET['brand'];
 
 ChromePhp::warn('model.php: Make a connection to data.db');
 
-class Model{
+class Model
+{
     //Property declaration, in this case we are declaring a variable or handler that points to the database connection, this will become a PDO object
     public $dbhandle;
     public $dsn;
 
-    //Method to crearte databse connection using PHP Data Objects (PDO) as the interface to SQLite
+    /**
+     * constructor to create databse connection using PHP Data Objects (PDO) as the interface to SQLite
+     */
     public function __construct($dsn)
     {
         //Set up the database source name (DSN)

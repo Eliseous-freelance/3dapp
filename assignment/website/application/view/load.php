@@ -1,12 +1,17 @@
 <?php
+/**
+ * load class that allows pages to be viewed
+ */
 class Load{
-    //defaults to constructor as no specific constructor is defined
+    /**
+     * allows to load a file 
+     */
     function view($file_name, $data=null){
-        //check for data
+        //check if the file contains data
         if(is_array($data)){
             extract($data);
         }
-        //cincatemat the view file with .php extension to incllude the view as a php file
+        //concatenate the view file with .php extension to include the view
         include $file_name.'.php';
     }
 }
