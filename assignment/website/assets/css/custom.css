@@ -1,10 +1,10 @@
 /* Method to declare your own fonts */
 @font-face {
    font-family: cocaColaFont;
-   src: url(../assets/fonts/loki_cola/LOKICOLA.TTF);
+   src: url(/3dapp/assignment/website/assets/fonts/loki_cola/cocacola.ttf);
 }
 
-@font-face {
+/* @font-face {
    font-family: OpenSans;
    src: url(../assets/fonts/Open_Sans/OpenSans-Regular.ttf);
 }
@@ -12,7 +12,7 @@
 @font-face {
    font-family: Oswald;
    src: url(../assets/fonts/Oswald/static/Oswald-Regular.ttf);
-}
+} */
 
 /* X-Small devices (portrait phones, less than 576px)
   No media query for `xs` since this is the default in Bootstrap
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* CSS rules for the main_text IDs */
 #main_3d_image {
-   background-image: url(../assets/images/coca-cola-original-brand-page-desktop-1600x700.jpg);
+   /* background-image: url(../assets/images/homepage/main_3D.jpg); */
    background-repeat: no-repeat;
    background-size: cover;
    /* The div block for the main_3d_image has no vertical size, 
@@ -281,7 +281,7 @@ h1, h2, h3, h4, h5, h6 {
 
    /* CSS rules for the social media font awesome iocns */
 
-   .fa-twitter-square:before {
+   .fa-image-square:before {
        content: "\f081";
        color: green;
        font-size: 1em;
@@ -290,12 +290,6 @@ h1, h2, h3, h4, h5, h6 {
    .fa-github-square:before {
        content: "\f092"; 
        color: yellow;
-       font-size: 1em;
-   }
-
-   .fa-google-plus-square:before {
-       content: "\f0d4"; 
-       color: blue;
        font-size: 1em;
    }
 
@@ -371,16 +365,12 @@ h1, h2, h3, h4, h5, h6 {
    }
 
    /* CSS rules for the social media font awesome iocns */
-   .fa-twitter-square:before {
+   .fa-image-square:before {
        color: rgb(216, 204, 37);
    }
 
    .fa-github-square:before {
        color: rgb(63, 61, 223);
-   }
-
-   .fa-google-plus-square:before {
-       color: rgb(218, 37, 52);
    }
 
    .fa-facebook-square:before {
@@ -518,16 +508,12 @@ h1, h2, h3, h4, h5, h6 {
    }
 
    /* CSS rules for the social media font awesome iocns */
-   .fa-twitter-square:before {
+   .fa-image-square:before {
        color: rgb(37, 144, 216);
    }
 
    .fa-github-square:before {
        color: rgb(13, 51, 5);
-   }
-
-   .fa-google-plus-square:before {
-       color: rgb(247, 232, 23);
    }
 
    .fa-facebook-square:before {

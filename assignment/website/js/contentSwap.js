@@ -4,43 +4,69 @@ var counter = 0;
  * 
  * @param {*} selected 
  */
-function swap(selected) {
-    // First don t display all div id contents 
-    document.getElementById('home').style.display = 'none';
-    document.getElementById('coke').style.display = 'none';
-    document.getElementById('sprite').style.display = 'none';
-    document.getElementById('pepper').style.display = 'none';
+function swap() {
+    dropdownItems = ['coke', 'sprite', 'fanta', 'pepper'];
+    for (let i=0; i< dropdownItems.length;i++){
+        // display the selected div id contents 
+        document.getElementById(i).style.display = 'block';
+    }
+}
 
-    // Then display the selected div id contents 
-    document.getElementById(selected).style.display = 'block';
+/**
+ * navigating main_content to other pages
+ */
+function swapMainContent(destinationPage){
+    allowedPages = ["cocaColaPage", "fantaPage", "spritePage", "DrPepperPage"]
+    for (let i=0;i<allowedPages.length;i++){
+        if(destinationPage == allowedPages[i]){
+            destinationPage = allowedPages[i]
+        }
+        else{
+            console.log("error loading pages")
+        }
+    }
+
+    document.getElementById(mainContents).style.display = document.getElementById(destinationPage)
 }
 
 /**
  * it changes the look of the body
  */
- function changeLook() {
+function changeLook() {
     counter += 1;
     switch (counter) {
         case 1:
             document.getElementById('bodyColor').style.backgroundColor = 'lightblue';
+            document.getElementById('bodyColor').style.color = 'blue';
             document.getElementById('headerColor').style.backgroundColor = '#FF0000';
+            document.getElementById('headerColor').style.color = 'black';
             document.getElementById('footerColor').style.backgroundColor = '#FF9900';
+            document.getElementById('footerColor').style.color = 'white';
             break;
         case 2:
             document.getElementById('bodyColor').style.backgroundColor = '#FF6600';
+            document.getElementById('bodyColor').style.color = 'green';
             document.getElementById('headerColor').style.backgroundColor = '#FF9999';
+            document.getElementById('headerColor').style.color = 'yellow';
             document.getElementById('footerColor').style.backgroundColor = '#996699';
+            document.getElementById('footerColor').style.color = 'white';
             break;
         case 3:
             document.getElementById('bodyColor').style.backgroundColor = 'coral';
+            document.getElementById('bodyColor').style.color = 'white';
             document.getElementById('headerColor').style.backgroundColor = 'darkcyan';
+            document.getElementById('headerColor').style.color = 'purple';
             document.getElementById('footerColor').style.backgroundColor = 'darksalmom';
+            document.getElementById('footerColor').style.color = 'brown';
             break;
         case 4:
             counter = 0;
             document.getElementById('bodyColor').style.backgroundColor = 'lightgrey';
+            document.getElementById('theme').style.color = 'blue';
             document.getElementById('headerColor').style.backgroundColor = 'chocolate';
+            document.getElementById('theme').style.color = 'green';
             document.getElementById('footerColor').style.backgroundColor = 'dimgrey';
+            document.getElementById('theme').style.color = 'red';
             break;
     }
 }
