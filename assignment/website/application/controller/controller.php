@@ -1,26 +1,28 @@
 <?php
-include './debug/ChromePhp.php';
-ChromePhp::log('controller.php: Hello World');
+include '../debug/ChromePhp.php'; //includes the ChromePhp debuugging tool 
+ChromePhp::log('controller.php: controlling'); 
 ChromePhp::log($_SERVER);
 
-//Create the controller class for the MVC design pattern
+/**
+ * 
+ */
 class Controller {
+    public $load; //load object
+    public $model; //model object
 
-    //declare public variables for the controller class
-    public $load;
-    public $model;
-
-    //Create functions for the controller class
+    /**
+     * constructor
+     */
     function __construct($pageURI = null){
-        //Create new objcets for Load and Model
+        //Create new Load and Model objcets
         $this->load = new Load();
-        $this->model = new Model();
-        //Determine what page you are on
+        $this->model = new Model('sqlite:../db/data.db');
+        //This determines the current page
         $this->$pageURI();
     }
 
     function home(){
-        //get data from the defined model method - model3D_info()
+        //get data from the defined model method
         $data = $this->model->model3D_info();
         //tell the loader what view to load and which dat to use
         $this->load->view('view3DAppTest_2', $data);

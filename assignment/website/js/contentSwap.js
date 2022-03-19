@@ -17,12 +17,10 @@ function swap() {
  */
 function swapMainContent(destinationPage){
     allowedPages = ["cocaColaPage", "fantaPage", "spritePage", "DrPepperPage"]
+    pages = ["viewCocaCola.php", "viewFanta.php", "viewSprite.php", "viewPepper.php"]
     for (let i=0;i<allowedPages.length;i++){
         if(destinationPage == allowedPages[i]){
-            destinationPage = allowedPages[i]
-        }
-        else{
-            console.log("error loading pages")
+            destinationPage = pages[i]
         }
     }
 
