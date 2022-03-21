@@ -2,9 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Coca Cola</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../assets/css/bootstrap_css/bootstrap.css">
+
+    <!--Fontawesome CSS-->
+    <link rel="stylesheet" href="../../../assets/css/fonts.css">
+
+    <!-- Gallery CSS-->
+    <link href="../../../assets/css/gallery.css" rel="stylesheet" type="text/css">
+
+    <!-- title -->
+    <title>Coca Cola 3D App template</title>
+    <!-- x3d models css -->
+    <link rel='stylesheet' type='text/css' href='../../../assets/css/x3dom.css'>
+
+    <!-- Custom CSS needs to be last to override any bootstrap or x3dom xss as necessary -->
+    <link rel="stylesheet" href="../../../assets/css/custom.css">
 </head>
+
+
 
 <body id="cocaColaPage">
     <!-- This is the coke page-->
@@ -24,15 +43,15 @@
                     <!-- X3D model -->
                     <div class="card-body">
                         <h4 class="card-title">Coca Cola X3D Model</h4>
-                        <!-- Temporary image instead of <div id="main_3d_image"</div>-->
-                        <div class="model3D">
-                            <x3d>
+                        <div class="3Dmodel" id="main_3d_image">
+                            <x3d width="500px" height="400px">
                                 <scene>
-                                    <inline url="assets/x3d/coke.x3d"></inline>
+                                    <inline url="../../assets/images/3d_models/coke_bottle.x3d"></inline>
+                                    <!--<ImageTexture url='"can_texture.jpeg"'/> -->
                                 </scene>
                             </x3d>
                         </div>
-                        <p class="card-text">This X3D model of the coke can has been created in 3ds Max, exported to VRML97 and converted, using the instantreality transcoders, to X3D for display online.</p>
+                        <p class="card-text">This X3D model of the coke can has been created in Blender and converted to X3D for display online.</p>
                         <h5 class="card-subtitle">Camera Views</h5>
                         <div class="camera-btns">
                             <p class="card-text">These buttons select a range of X3D model viewpoints</p>
@@ -49,10 +68,9 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-
+    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
 </body>
 
 </html>

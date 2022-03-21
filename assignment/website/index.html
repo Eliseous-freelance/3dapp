@@ -5,6 +5,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
 
+  <!-- Scaling to different device sizes-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--JQuery.getJSON() fknows-->
 
   <!-- Bootstrap CSS -->
@@ -14,7 +16,7 @@
   <link rel="stylesheet" href="assets/css/fonts.css">
 
   <!-- Gallery CSS-->
-  <link href="assets/css/gallery.css" rel="stylesheet" type="text/css">
+  <!-- <link href="assets/css/gallery.css" rel="stylesheet" type="text/css"> -->
 
   <!-- title -->
   <title>Coca Cola 3D App template</title>
@@ -52,16 +54,18 @@
         <ul class="navbar-nav ml-auto">
           <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('about')" data-toggle="popover" data-trigger="hover"
-              data-placement="bottom" title="About Web 3D Applications"
+          <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('about')" data-toggle="popover"
+              data-trigger="hover" data-placement="bottom" title="About Web 3D Applications"
               data-content="3D Apps is a final year and postgraduate module ...">About</a></li>
 
           <!-- Dropdown -->
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown">Drinks</a></li>
           <ul class="dropdown-menu">
             <li><a class="nav-item dropdown-item" id="coke" href="javascript:swapMainContent('coke')">coca cola</a></li>
-            <li><a class="nav-item dropdown-item" id="sprite" href="javascript:swapMainContent('sprite')">Sprite</a></li>
-            <li><a class="nav-item dropdown-item" id="pepper" href="javascript:swapMainContent('pepper')">Dr Pepper</a></li>
+            <li><a class="nav-item dropdown-item" id="sprite" href="javascript:swapMainContent('sprite')">Sprite</a>
+            </li>
+            <li><a class="nav-item dropdown-item" id="pepper" href="javascript:swapMainContent('pepper')">Dr Pepper</a>
+            </li>
             <li><a class="nav-item dropdown-item" id="fanta" href="javascript:swapMainContent('fanta')">Fanta</a></li>
           </ul>
 
@@ -166,7 +170,11 @@
     </div>
   </div>
   <!--End main_contents container-fluid-->
-
+  <br>
+  <!-- Gallery -->
+  <div id="gallery"></div>
+  
+  <br>
   <!--3D App footer-->
   <nav class="navbar navbar-expand-sm footer" id="footerColor">
     <div class="container-fluid">
@@ -187,20 +195,20 @@
         <a href="https://www.facebook.com/eliseo.dallecrode"><i
             class="fab fa-facebook-square fa-2x fa-pull-right"></i></a>
       </div>
-
     </div>
   </nav>
 
   <!-- x3dom JavaScript -->
   <script type='text/javascript' src='js/x3dom.js'></script>
 
-  <!--Bootstrap js library-->
+  <!-- Jquery js library-->
   <script src="js/jquery.js"></script>
+
   <!-- <script src="js/bootstrap_js/popper.min.js"></script> -->
   <script src="js/bootstrap/bootstrap.js"></script>
 
-  <!-- Gallery JavaScript-->
-  <script type="text/javascript" src="js/gallery_generator.js"></script>
+  <!-- Gallery JavaScript -->
+  <!-- <script type="text/javascript" src="js/gallery_generator.js"></script> -->
 
   <!-- Custom JavaScript -->
   <script>

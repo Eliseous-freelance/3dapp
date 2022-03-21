@@ -1,5 +1,5 @@
 <?php
-$directory = '../assets/images'; //stores the image path/folder name in relation to your gallery web space. In this particular example, if hook.php were in the /gallery root folder, your images would be placed in /gallery/assets/images/. We can see that the ../ takes us up a directory level to the assets and scripts folder level, we then dive down into the assets/images folder to find the image files.
+$directory = 'assets/images/gallery/'; //stores the image path/folder name in relation to your gallery web space. In this particular example, if hook.php were in the /gallery root folder, your images would be placed in /gallery/assets/images/. We can see that the ../ takes us up a directory level to the assets and scripts folder level, we then dive down into the assets/images folder to find the image files.
 //Only load files with the following extensions.
 $allowed_extensions=array('jpg', 'jpeg', 'gif', 'png'); //stores an array of allowed file extensions. We want to identify only the image files in a directory so that any other file formats will be ignored by the gallery’s hook.php file. You will be able to test this feature by adding junk files (e.g. a blank .txt file).
 //Used to separate the extentions from each file.
@@ -28,4 +28,5 @@ while($file = readdir($dir_handle)){
 closedir($dir_handle); //response should like: ../assets/images/coke_can_tn.png~../assets/images/coke_top_tn.png~../assets/images/dr_pepper_top_tn.png~../assets/images/sprite_top_tn.png
 //return response while removing the last ~ separator
 echo substr_replace($response, "", -1);
+
 ?>
