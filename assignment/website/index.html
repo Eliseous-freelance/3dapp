@@ -16,15 +16,33 @@
   <link rel="stylesheet" href="assets/css/fonts.css">
 
   <!-- Gallery CSS-->
-  <!-- <link href="assets/css/gallery.css" rel="stylesheet" type="text/css"> -->
+  <link href="assets/css/gallery.css" rel="stylesheet" type="text/css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
 
   <!-- title -->
   <title>Coca Cola 3D App template</title>
+
   <!-- x3d models css -->
   <link rel='stylesheet' type='text/css' href='assets/css/x3dom.css'>
 
   <!-- Custom CSS needs to be last to override any bootstrap or x3dom xss as necessary -->
   <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!--JQuery-->
+  <!-- <script type=text/javascript src="http:code.jquery.com/jquery-latest.js"></script>  -->
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 </head>
 
 <body id="bodyColor">
@@ -54,9 +72,9 @@
         <ul class="navbar-nav ml-auto">
           <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('about')" data-toggle="popover"
-              data-trigger="hover" data-placement="bottom" title="About Web 3D Applications"
-              data-content="3D Apps is a final year and postgraduate module ...">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-toggle="popover" data-trigger="hover"
+              data-placement="bottom" title="" data-content="3D Apps is a final year and postgraduate module ..."
+              data-original-title="About Web 3D Applications">About</a></li>
 
           <!-- Dropdown -->
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown">Drinks</a></li>
@@ -173,7 +191,7 @@
   <br>
   <!-- Gallery -->
   <div id="gallery"></div>
-  
+
   <br>
   <!--3D App footer-->
   <nav class="navbar navbar-expand-sm footer" id="footerColor">
@@ -181,8 +199,8 @@
 
       <!-- Style and reset style buttons-->
       <div class="navbar-text float-left">
-        <button onclick="changeLook();">Style</button>
-        <button onclick="changeBack();">Reset style</button>
+        <button onclick="javascript:changeLook();">Style</button>
+        <button onclick="javascript:changeBack();">Reset style</button>
       </div>
 
 
@@ -201,22 +219,20 @@
   <!-- x3dom JavaScript -->
   <script type='text/javascript' src='js/x3dom.js'></script>
 
-  <!-- Jquery js library-->
-  <script src="js/jquery.js"></script>
-
-  <!-- <script src="js/bootstrap_js/popper.min.js"></script> -->
+  <!-- <script src="js/bootstrap/popper.min.js"></script> -->
   <script src="js/bootstrap/bootstrap.js"></script>
 
-  <!-- Gallery JavaScript -->
-  <!-- <script type="text/javascript" src="js/gallery_generator.js"></script> -->
+  <!--Font Awesome 5-->
+  <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
 
-  <!-- Custom JavaScript -->
-  <script>
-    $(document).ready(function () {
-      $('[data-toggle="popover"]').popover();
-    });
-  </script>
+  <!-- Gallery JavaScript -->
+  <script type="text/javascript" src="gallery/gallery_generator.js"></script>
+
+  <!-- Gallery JavaScript -->
   <script type="text/javascript" src="js/contentSwap.js"></script>
+
+  <script type="text/javascript" src="js/custom.js"></script>
+
 </body>
 
 </html>

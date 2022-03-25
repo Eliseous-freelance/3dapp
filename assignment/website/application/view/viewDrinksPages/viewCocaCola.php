@@ -46,7 +46,7 @@
                         <div class="3Dmodel" id="main_3d_image">
                             <x3d width="500px" height="400px">
                                 <scene>
-                                    <inline url="../../assets/images/3d_models/coke_bottle.x3d"></inline>
+                                    <inline url="../../../assets/images/3d_models/coke_bottle.x3d"></inline>
                                     <!--<ImageTexture url='"can_texture.jpeg"'/> -->
                                 </scene>
                             </x3d>

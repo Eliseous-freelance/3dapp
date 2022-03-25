@@ -1,18 +1,6 @@
 var counter = 0;
 
 /**
- * 
- * @param {*} selected 
- */
-function swap() {
-    dropdownItems = ['coke', 'sprite', 'fanta', 'pepper'];
-    for (let i=0; i< dropdownItems.length;i++){
-        // display the selected div id contents 
-        document.getElementById(i).style.display = 'block';
-    }
-}
-
-/**
  * it changes the look of the body
  */
 function changeLook() {
@@ -61,4 +49,12 @@ function changeBack() {
     document.getElementById('bodyColor').style.backgroundColor = '#FFFFFF';
     document.getElementById('headerColor').style.backgroundColor = 'rgba(175,0,0,1)';
     document.getElementById('footerColor').style.backgroundColor = 'rgba(175,0,0,1)';
+}
+
+function swapMainContent(){
+    dropdownItems = ['coke', 'sprite', 'fanta', 'pepper'];
+    for (let i=0; i< dropdownItems.length;i++){
+        // display the selected div id contents 
+        document.getElementById(i).style.display = 'block';
+    }
 }
