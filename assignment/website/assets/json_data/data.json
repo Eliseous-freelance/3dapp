@@ -1,0 +1,12 @@
+{
+    "galleryData": [
+        {
+			"galleryTitle": "3D Images",
+			"galleryDescription": "You can also add paths to the 3D assets in the data.json file, you should definitely do this for the final assignment."
+		},
+		{
+			"CameraTitle": "Camera Views",
+			"CameraSubtitle": "You can also add paths to images in the data.json file — you should definitely do this for the final assignment."
+		}
+    ]
+}

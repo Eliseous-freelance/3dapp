@@ -10,7 +10,7 @@ $(document).ready(function () {
                 let htmlCode = "";
                 images.forEach(image => 
                 {
-                    htmlCode = `<a href="assets/images/${image}">
+                    htmlCode = `<a href="./assets/images/${image}">
                     <img class="card-img-top img-thumbnail" src="assets/images/${image}">
                     </a>`;
                 })
