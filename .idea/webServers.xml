@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ea0a06e2-44c9-4319-bcbe-ce313972aa50" name="uni" url="">
+        <fileTransfer rootFolder="/its/home/ed385/public_html/3dapp" accessType="SFTP" host="unix.sussex.ac.uk" port="22" sshConfigId="4f1d7b7a-2871-4ce4-9e7d-95bf7da5676a" sshConfig="ed385@unix.sussex.ac.uk:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

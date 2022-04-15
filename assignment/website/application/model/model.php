@@ -1,6 +1,5 @@
 <?php
-
-include '../../debug/ChromePhp.php';
+include '../debug/ChromePhp.php';
 ChromePhp::log('model.php: Modelling data');
 ChromePhp::log($_SERVER);
 
@@ -42,6 +41,7 @@ class Model
             print new Exception($e->getMessage());
         }
     }
+
     public function dbCreateTable()
     {
         echo "Create table function";
@@ -53,6 +53,7 @@ class Model
         }
         $this->dbhandle = NULL;
     }
+
     public function dbInsertData()
     {
         echo "Daba insertion function";
@@ -69,6 +70,7 @@ class Model
         }
         $this->dbhandle = NULL;
     }
+    
     public function dbGetData()
     {
         echo "Data retrieval function";

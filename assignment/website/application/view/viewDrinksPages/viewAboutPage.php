@@ -29,12 +29,78 @@
             </div>
         </div>
     </div>
+
+
+
+    
+    <h1>Coca Cola products</h1>
+    <div class="box">
+        <h2>Coke Can 3D Image 1</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/coke_1.png'></a>
+    </div>
+    <div class="box">
+        <h2>Coke Can 3D Image 2</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/coke_2.png'></a>
+    </div>
+    <div class="box">
+        <h2>Sprite Bottle 3D Image 1</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/sprite_1.png'></a>
+    </div>
+    <div class="box">
+        <h2>Sprite Bottle 3D Image 2</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/sprite_2.png'></a>
+    </div>
+    <div class="box">
+        <h2>Dr Pepper Cup 3D Image 1</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/pepper_1.png'></a>
+    </div>
+    <div class="box">
+        <h2>Dr Pepper Cup 3D Image 2</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/pepper_2.png'></a>
+    </div>
+
+    <div class="box">
+        <h2>Fanta Can 3D Image 1</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/fanta_1.png'></a>
+    </div>
+    <div class="box">
+        <h2>Fanta Can 3D Image 2</h2>
+        <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/fanta_2.png'></a>
+    </div>
     <!--div#id-->
     <!-- div.class -->
     <!-- div.class#id -->
     <!-- div.class#id>h2{hi motherfuckers}+p>lorem43 -->
     <!--div.class#id>h2{hi motherfuckers}+p>lorem43^^div.container>section.sectionContainer>p{lorem50}-->
 
+   <!-- This is the coke page-->
+   <div class="container-fluid main_contents">
+    <h1>Model_3D Data returned from the SQLite database</h1>
+    <?php for ($i = 0; $i < count($data); $i++) { ?>
+    <div class="boxModel">
+        <div class="box">
+            <!-- for i in models echo model -->
+            <h2><?php echo $model_1 ?></h2>
+            <img class="imgBox" src='../assets/images/<?php echo $image3D_1 ?>.png'>
+        </div>
+        <div class="boxText">
+            <h2><?php echo $data[$i]['x3dModelTitle'] ?></h2>
+        </div>
+        <div class="boxText">
+            <h2><?php echo $data[$i]['x3dCreationMethod'] ?></h2>
+        </div>
+        <div class="boxText">
+            <h2><?php echo $data[$i]['modelTitle'] ?></h2>
+        </div>
+        <div class="boxText">
+            <h2><?php echo $data[$i]['modelSubtitle'] ?></h2>
+        </div>
+        <div class="boxText">
+            <h2><?php echo $data[$i]['modelDescription'] ?></h2>
+        </div>
+    </div>
+    <?php } ?>
+   
 
     <div id="view3DAppTest">
         <h1>Initial 3D App test view</h1>

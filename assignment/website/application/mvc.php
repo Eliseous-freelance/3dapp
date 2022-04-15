@@ -9,5 +9,4 @@ $pageURI=SUBSTR($pageURI, strrpos($pageURI, 'index.html') +10);
         new Controller('home');
     else
         new Controller($pageURI);
-
 ?>
