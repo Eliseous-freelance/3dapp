@@ -31,8 +31,6 @@
 
     <!-- x3d models css -->
     <link rel='stylesheet' type='text/css' href='../../../assets/css/x3dom.css'>
-    <!-- Gallery CSS-->
-    <link href="../../../gallery/assets/css/gallery.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../../assets/css/bootstrap_css/bootstrap.css">
     <style>
@@ -73,7 +71,7 @@
                                 <Transform>
                                     <inline nameSpaceName="ModelCoke" mapDEFToID="true"
                                             url="../../../assets/images/3d_models/coke_bottle.x3d"></inline>
-                                    <!--<ImageTexture url='"can_texture.jpeg"'/> -->
+<!--                                    <ImageTexture url='"can_texture.jpeg"'/> -->
                                     <navigationInfo type='"walk" "any"' id="navType"></navigationInfo>
 
                                     <Viewpoint id="front" position="-0.07427 0.95329 -2.79608"

@@ -46,7 +46,8 @@ function changeLook() {
  * changes the theme to the original format
  */
 function changeBack() {
-    document.getElementById('bodyColor').style.backgroundColor = '#FFFFFF';
+    document.getElementById('bodyColor').style.backgroundColor = 'rgba(182, 231, 243, 1.0)';
     document.getElementById('headerColor').style.backgroundColor = 'rgba(175,0,0,1)';
     document.getElementById('footerColor').style.backgroundColor = 'rgba(175,0,0,1)';
 }
+

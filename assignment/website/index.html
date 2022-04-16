@@ -11,8 +11,6 @@
   <!-- title -->
   <title>Coca Cola 3D App</title>
 
-
-
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="https://findicons.com/files/icons/917/soda_pop_caps/128/coca_cola.png" />
 
@@ -48,7 +46,7 @@
         <a class="navbar-brand" href="#">
           <h1>1</h1>
           <h1>oca</h1>
-          <h2>Cola</h2>
+          <h2 id='brand'>Cola</h2>
           <h3>Journey</h3>
           <p>Refreshing the world, one story at a time</p>
         </a>
@@ -162,7 +160,7 @@
               alt="fanta"></a>
           <div class="card-body">
             <h3 class="card-title">Fanta</h3>
-            <p class="card-text"> We're all born playful creatures. But the older we become, the less permission we give
+            <p class="card-text" id="fanta"> We're all born playful creatures. But the older we become, the less permission we give
               ourselves to be playful and we can easily feel burnt out or overwhelmed. All this seriousness, we call it
               the "Grey".
               But we can always fight back the "Grey". How? By taking inspiration from the ones who stayed spontaneous
@@ -184,7 +182,8 @@
       <div class="navbar-text float-left">
         <button onclick="javascript:changeLook();">Style</button>
         <button onclick="javascript:changeBack();">Reset style</button>
-        <a href="application/view/viewDrinksPages/viewDrinks.php">Model</a>
+<!--        <a href="application/view/viewDrinksPages/viewDrinks.php">Model</a>-->
+        <button onclick="javascript:getModels();">Modl</button>
         <a href="application/view/viewDrinksPages/viewAboutPage.php">About</a>
         <a href="application/mvc.php">MVC</a>
       </div>
