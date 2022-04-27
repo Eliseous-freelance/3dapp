@@ -26,6 +26,7 @@ class Model
                 PDO::ATTR_EMULATE_PREPARES => false,
             ));
             $this->handle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             echo 'Database connection created';
         } catch (PDOEXception $e) {
             echo "I can't connect to the database! D: ";
@@ -37,63 +38,63 @@ class Model
     {
         try {
             $this->handle->exec("
-                    CREATE TABLE [IF NOT EXISTS] Model_3D (
-                        Id INTEGER PRIMARY KEY, 
+                    CREATE TABLE  Model_3D (
+                        ID INTEGER PRIMARY KEY, 
                         x3dCreationMethod TEXT NOT NULL, 
                         modelTitle TEXT NOT NULL, 
                         modelSubtitle TEXT NOT NULL, 
-                        modelDescription TEXT NOT NULL)");
-            return "Model_3D table is successfully created inside infoData.db file";
+                        modelDescription TEXT NOT NULL);");
+            return "Model_3D table is successfully created insIDe infoData.db file";
         } catch (PDOException $e) {
             print new Exception($e->getMessage());
         }
         $this->handle = NULL;
     }
 
-    public function dbCreateDrinkDetailsTable()
-    {
-        try {
-            $this->handle->exec("
-                    CREATE TABLE [IF NOT EXISTS] DrinkDetails (
-                        Id INTEGER PRIMARY KEY, 
-                        title TEXT, 
-                        text TEXT, 
-                        imagePath TEXT)");
-            return "drink details table is successfully created inside infoData.db file";
-        } catch (PDOException $e) {
-            print new Exception($e->getMessage());
-        }
-        $this->handle = NULL;
-    }
+//    public function dbCreateDrinkDetailsTable()
+//    {
+//        try {
+//            $this->handle->exec("
+//                    CREATE TABLE  DrinkDetails (
+//                        ID INTEGER PRIMARY KEY,
+//                        title VARCHAR(1000) NOT NULL,
+//                        text TEXT NOT NULL,
+//                        imagePath TEXT NOT NULL);");
+//            return "drink details table is successfully created insIDe infoData.db file";
+//        } catch (PDOException $e) {
+//            print new Exception($e->getMessage());
+//        }
+//        $this->handle = NULL;
+//    }
 
     public function dbInsertModelData($ID, $x3dCreationMethod, $modelTitle, $modelSubtitle, $modelDescription)
     {
         echo "Data insertion function";
         try {
-            $this->handle->exec("INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubstitle, modelSubtitle)
-                                    SELECT $x3dCreationMethod, $modelTitle, $modelSubtitle, $modelDescription 
-                                    VALUES ($ID, $x3dCreationMethod, $modelTitle, $modelSubtitle, $modelDescription);
-                                    WHERE NOT EXISTS(SELECT $ID FROM Model_3D WHERE Id = $ID AND x3dCreationMethod = $x3dCreationMethod AND modelTitle = $modelTitle AND modelSubtitle = $modelSubtitle AND modelDescription = $modelSubtitle);");
+            $this->handle->exec("INSERT INTO Model_3D (ID, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubstitle, modelSubtitle)
+                                    SELECT ($x3dCreationMethod, $modelTitle, $modelSubtitle, $modelDescription)
+                                    VALUES ($ID, $x3dCreationMethod, $modelTitle, $modelSubtitle, $modelDescription)
+                                    WHERE NOT EXISTS(SELECT $ID FROM Model_3D WHERE ID = $ID AND x3dCreationMethod = $x3dCreationMethod AND modelTitle = $modelTitle AND modelSubtitle = $modelSubtitle AND modelDescription = $modelSubtitle)");
 
 
 
-            return "X3D model data is inserted successfully inside modelData.db";
+            return "X3D model data is inserted successfully insIDe modelData.db";
         } catch (PDOException $e) {
             print new Exception($e->getMessage());
         }
         $this->handle = NULL;
     }
 
-    public function dbInsertDrinkDetails($Id, $title, $text, $imagePath)
+    public function dbInsertDrinkDetails($title, $text, $imagePath)
     {
         echo "Data insertion function";
         try {
-            $this->handle->exec(`INSERT INTO DrinkDetails (Id, title, text, imagePath) VALUES('$Id', '$title', '$text', '$imagePath')`);
-//            $this->handle->exec("INSERT INTO drinkDetails (Id, title, text, imagePath)
-//                                    SELECT $title, $text, $imagePath
-//                                    VALUES ($Id, $title, $text, $imagePath)
-//                                    WHERE NOT EXISTS(SELECT $Id FROM drinkDetails WHERE Id = $Id AND title = $title AND text = $text AND imagePath = $imagePath);");
-            return "X3D model data is inserted successfully inside test1.db";
+            $this->handle->exec("INSERT INTO DrinkDetails (title) VALUES($title)"); //, description, imagePath , $text, $imagePath
+//            $this->handle->exec("INSERT INTO DrinkDetails (ID, title, description, imagePath)
+//                                    SELECT ($title, $text, $imagePath),
+//                                    VALUES ($ID, $title, $text, $imagePath),
+//                                    WHERE NOT EXISTS(SELECT $ID FROM drinkDetails WHERE ID = $ID AND title = $title AND description = $text AND imagePath = $imagePath);");
+            return "X3D model data is inserted successfully insIDe test1.db";
         } catch (PDOException $e) {
             print new Exception($e->getMessage());
         }
@@ -140,7 +141,7 @@ class Model
             echo "Data retrieval function";
             try {
                 //prepare a statement to get all records from the drinkDetails table
-                $sql = 'SELECT * FROM drinkDetails';
+                $sql = 'SELECT * FROM DrinkDetails';
                 //use PDO query() to query the database with the prepared SQL statement
                 $stmt = $this->handle->query($sql);
 

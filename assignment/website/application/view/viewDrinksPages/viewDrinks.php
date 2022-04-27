@@ -29,10 +29,10 @@
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
 
-    <!-- x3d models css -->
-    <link rel='stylesheet' type='text/css' href='../../../assets/css/x3dom.css'>
+    <!-- x3d models css --> // website/application/db/infoData.db
+    <link rel='stylesheet' type='text/css' href='/its/home/ed385/public_html/3dapp/assignment/website/assets/css/x3dom.css'>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../assets/css/bootstrap_css/bootstrap.css">
+    <link rel="stylesheet" href="/its/home/ed385/public_html/3dapp/assignment/website/assets/css/bootstrap_css/bootstrap.css">
     <style>
         /* Make the image fully responsive */
         .carousel-inner img {
@@ -43,7 +43,7 @@
     </style>
 
     <!-- Custom CSS needs to be last to override any bootstrap or x3dom xss as necessary -->
-    <link rel="stylesheet" href="../../../assets/css/custom.css">
+    <link rel="stylesheet" href="/its/home/ed385/public_html/3dapp/assignment/website/assets/css/custom.css">
 </head>
 
 
@@ -70,7 +70,7 @@
                             <scene>
                                 <Transform>
                                     <inline nameSpaceName="ModelCoke" mapDEFToID="true"
-                                            url="../../../assets/images/3d_models/coke_bottle.x3d"></inline>
+                                            url="/its/home/ed385/public_html/3dapp/assignment/website/assets/images/3d_models/coke_bottle.x3d"></inline>
 <!--                                    <ImageTexture url='"can_texture.jpeg"'/> -->
                                     <navigationInfo type='"walk" "any"' id="navType"></navigationInfo>
 
@@ -123,19 +123,19 @@
                         <div id="carouselControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" src="../../../gallery/assets/images/coca_cola.jpg"
+                                    <img class="d-block w-100" src="./its/home/ed385/public_html/3dapp/assignment/website/gallery/assets/images/coca_cola.jpg"
                                          alt="First slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="../../../gallery/assets/images/dr_pepper.jpg"
+                                    <img class="d-block w-100" src="/its/home/ed385/public_html/3dapp/assignment/website/gallery/assets/images/dr_pepper.jpg"
                                          alt="Second slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="../../../gallery/assets/images/fanta.png"
+                                    <img class="d-block w-100" src="/its/home/ed385/public_html/3dapp/assignment/website/gallery/assets/images/fanta.png"
                                          alt="Third slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="../../../gallery/assets/images/sprite.jpg"
+                                    <img class="d-block w-100" src="/its/home/ed385/public_html/3dapp/assignment/website/gallery/assets/images/sprite.jpg"
                                          alt="Fourth slide">
                                 </div>
                             </div>
@@ -174,11 +174,11 @@
 
 <script type='text/javascript' src='https://www.x3dom.org/x3dom/release/x3dom.js'></script>
 
-<script src="../../../js/models_animation/animations.js"></script>
+<script src="./its/home/ed385/public_html/3dapp/assignment/website/js/models_animation/animations.js"></script>
 
-<script src="../../../js/bootstrap/bootstrap.js"></script>
+<script src="/its/home/ed385/public_html/3dapp/assignment/website/js/bootstrap/bootstrap.js"></script>
 
-<script src="../../../gallery/gallery_generator.js"></script>
+<script src="/its/home/ed385/public_html/3dapp/assignment/website/gallery/gallery_generator.js"></script>
 </body>
 
 </html>
