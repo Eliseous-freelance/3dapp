@@ -26,7 +26,8 @@ function getModels() {
 }
 
 window.onload = function runMVC() {
-    fetch(`application/mvc.php?id=home`).then(res => res.text().then((txt) => {
-        console.log(txt);
-    }));
+    swapMainContent("home");
+    // fetch(`application/mvc.php?id=home`).then(res => res.text().then((txt) => {
+    //     console.log(txt);
+    // }));
 }

@@ -55,6 +55,7 @@
         <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/pepper_1.png'></a>
     </div>
     <div class="box">
+
         <h2>Dr Pepper Cup 3D Image 2</h2>
         <a href="default.asp"><img class="imgBox" src='../../assets/images/gallery/pepper_2.png'></a>
     </div>

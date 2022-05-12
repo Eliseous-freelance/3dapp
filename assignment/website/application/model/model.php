@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ *
  */
 class Model
 {
@@ -11,13 +11,13 @@ class Model
 
     /**
      * constructor to create database connection using PHP Data Objects (PDO) as the interface to SQLite
-     * @param PDO $handle
      */
     public function __construct($dsn)
     {
         //Set up the database source name (DSN)
         $this->dsn = $dsn;
         $this->handle = $this->connectDB($this->dsn);
+        $this->result = null;
     }
 
     public function connectDB($dsn){
@@ -28,80 +28,133 @@ class Model
                 PDO::ATTR_EMULATE_PREPARES => false,
             ));
             $this->handle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
             echo "Database connection created \n";
             return $this->handle;
         } catch (PDOEXception $e) {
-            echo "I can't connect to the database! D:";
-            print new Exception($e->getMessage());
+            echo "I can't connect to the database! D: \n";
+            print new Exception($e->getMessage()."\n");
         }
     }
 
-    public function dbGetDrinkDetails(){
-        {
-            try {
-                echo "Data retrieval function \n";
-                //prepare a statement to get all records from the drinkDetails table
-                $sql = "SELECT title FROM DrinkDetails";
-
-                //use PDO query() to query the database with the prepared SQL statement
-                $stmt = $this->handle->query($sql);
-
-                //user up an array to return the results to the view
-                $result = null;
-
-                //set up a variable to index each row of the array
-                $i = 0;
-                //use PDO fetch() to retrieve the results from the database using a while loop
-                //use a while loop to loop through the rows
-                while ($data = $stmt->fetch()) {
-                    $result[$i]['title'] = $data['title'];
-                    $result[$i]['description'] = $data['description'];
-                    $result[$i]['imagePath'] = $data['imagePath'];
-                    //increment the row index
-                    $i++;
-                }
-            } catch (PDOException $e) {
-                print new Exception($e->getMessage());
-                echo json_encode($result);
-            }
-            //close the database connection
-            $this->handle = NULL;
-            //send the response back to the view
-            return $result;
+    public function dbCreateModelTable()
+    {
+        try {
+            $this->handle->exec("DROP TABLE IF EXISTS Model_3D;");
+            $this->handle->exec("CREATE TABLE IF NOT EXISTS Model_3D (ID INTEGER PRIMARY KEY, creationMethod TEXT NOT NULL, modelTitle TEXT NOT NULL, modelSubtitle TEXT NOT NULL,  modelDescription TEXT NOT NULL, modelPath TEXT NOT NULL);");
+            echo "Model_3D table is successfully created inside infoData.db file \n";
+        } catch (PDOException $e) {
+            print new Exception($e->getMessage()."\n");
         }
     }
 
+    public function dbCreateDrinkDetailsTable()
+    {
+        try {
+            $this->handle->exec("DROP TABLE IF EXISTS DrinkDetails;");
+            $this->handle->exec("CREATE TABLE IF NOT EXISTS DrinkDetails (ID INTEGER PRIMARY KEY, title TEXT NOT NULL, description TEXT NOT NULL, imagePath TEXT NOT NULL);");
+            echo "drink details table is successfully created inside infoData.db file \n";
+        } catch (PDOException $e) {
+            print new Exception($e->getMessage()."\n");
+        }
+        //$this->handle = NULL;
+    }
+
+    public function dbInsertModelData($ID, $creationMethod, $modelTitle, $modelSubtitle, $modelDescription, $modelPath)
+    {
+        try {
+
+            echo "Data insertion function \n";
+            $this->handle->exec("INSERT INTO Model_3D (ID, creationMethod, modelTitle, modelSubstitle, modelDescription, modelPath) VALUES (\"$ID\", \"$creationMethod\", \"$modelTitle\", \"$modelSubtitle\", \"$modelDescription\", \"$modelPath\");");
+            echo "Model data is inserted successfully inside modelData.db \n";
+        } catch (PDOException $e) {
+            print new Exception($e->getMessage()."\n");
+        }
+    }
+
+    public function dbInsertDrinkDetails($ID, $title, $description, $imagePath)
+    {
+        $blarg = "";
+        try {
+            echo "Data insertion function \n";
+            $this->handle->exec("INSERT INTO DrinkDetails (ID, title, description, imagePath) VALUES (\"$ID\", \"$title\", \"$description\", \"$imagePath\");");
+            echo "Model data is inserted successfully inside infoData.db \n";
+        } catch (PDOException $e) {
+            print new Exception($e->getMessage()."\n");
+        }
+    }
 
     public function dbGetModelData()
     {
-        echo "Data retrieval function";
+        echo "Data retrieval function \n";
         try {
             //prepare a statement to get all records from the Model_3D table
             $sql = 'SELECT * FROM Model_3D';
             //use PDO query() to query the database with the prepared SQL statement
             $stmt = $this->handle->query($sql);
+
+            //user up an array to return the results to the view
             $result = null;
             //set up a variable to index each row of the array
-            $i = 0;
-            //use PDO fetch() to retrieve the results from the database using a while loop
+            $i = -0;
+            
             //use a while loop to loop through the rows
             while ($data = $stmt->fetch()) {
-                $result[$i]['title'] = $data['title'];
-                $result[$i]['method'] = $data['method'];
-                $result[$i]['subtitle'] = $data['subtitle'];
-                $result[$i]['description'] = $data['description'];
+                $result[$i]['creationMethod'] = $data['creationMethod'];
+                $result[$i]['modelTitle'] = $data['modelTitle'];
+                $result[$i]['modelSubtitle'] = $data['modelSubtitle'];
+                $result[$i]['modelDescription'] = $data['modelDescription'];
                 //increment the row index
                 $i++;
             }
         } catch (PDOException $e) {
-            print new Exception($e->getMessage());
+            print new Exception($e->getMessage()."\n");
             echo json_encode($result);
         }
         //close the database connection
-        $this->handle = NULL;
         //send the response back to the view
-        return $result; //you might want to jseon_encode
+        return $result;
+    }
+
+    public function dbGetDrinkDetails($id){
+        {
+            echo "Data retrieval function \n";
+            try {
+                //prepare a statement to get all records from the drinkDetails table
+                $sql = 'SELECT * FROM DrinkDetails WHERE ID = '.$id.'';
+                //use PDO query() to query the database with the prepared SQL statement
+                $stmt = $this->handle->query($sql);
+
+                //user up an array to return the results to the view
+                $result = null;
+                //set up a variable to index each row of the array
+                $i = -0;
+                
+                //use a while loop to loop through the rows
+                while ($data = $stmt->fetch()) {
+                    $result['title'] = $data['title'];
+                    $result['description'] = $data['description'];
+                    $result['imagePath'] = $data['imagePath'];
+                    //increment the row index
+                    $i++;
+                }
+                $this->setResult($result);
+            } catch (PDOException $e) {
+                print new Exception($e->getMessage()."\n");
+                echo json_encode($result);
+            }
+            //close the database connection
+//            $this->handle = $this->handle = null;
+            //send the response back to the view
+            return $result;
+        }
+    }
+
+    public function setResult($result){
+        $this->result = $result;
+    }
+
+    public function getResult(){
+        return $this->result;
     }
 
 }
