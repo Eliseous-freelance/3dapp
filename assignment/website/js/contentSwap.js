@@ -33,7 +33,6 @@ function changeLook() {
         case 4:
             counter = 0;
             document.getElementById('bodyColor').style.backgroundColor = 'lightgrey';
-            document.getElementById('theme').style.color = 'blue';
             document.getElementById('headerColor').style.backgroundColor = 'chocolate';
             document.getElementById('theme').style.color = 'green';
             document.getElementById('footerColor').style.backgroundColor = 'dimgrey';
@@ -49,5 +48,9 @@ function changeBack() {
     document.getElementById('bodyColor').style.backgroundColor = 'rgba(182, 231, 243, 1.0)';
     document.getElementById('headerColor').style.backgroundColor = 'rgba(175,0,0,1)';
     document.getElementById('footerColor').style.backgroundColor = 'rgba(175,0,0,1)';
+
+    document.getElementById('bodyColor').style.color = 'rgba(182, 231, 243, 1.0)';
+    document.getElementById('headerColor').style.color = 'rgba(182, 231, 243, 1.0)';
+    document.getElementById('footerColor').style.color = 'rgba(182, 231, 243, 1.0)';
 }
 

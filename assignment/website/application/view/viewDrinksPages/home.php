@@ -1,6 +1,4 @@
 
-
-
 <div class="row">
     <div class="col-sm-21">
         <div id="main_3d_image">
@@ -20,12 +18,12 @@
 $i=0;
 foreach($handover as $k => $v){
     if(($i%2)==0){
-        echo '<div class="row">';
+        echo '<div class="row justify-content-around">';
     }
     echo '
     <div class="col-xs-12 col-sm-6">
         <div class="card">
-            <a href="#"><img class="card-img-top img-fluid img-thumbnail" class="img-fluid" src="'.$v["imagePath"].'"
+            <a href="#"><img class="card-img-top img-fluid img-thumbnail" class="border-0" class="img-fluid" src="'.$v["imagePath"].'"
                              alt="'.$v["title"].'"></a>
             <div class="card-body"><!---->
                 <h3 class="card-title"">'.$v["title"].'</h3>
@@ -43,4 +41,4 @@ foreach($handover as $k => $v){
 if($i>0 && ($i%2)!=0){
     echo '</div>';
 }
-    ?>
+?>

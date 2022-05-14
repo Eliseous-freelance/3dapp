@@ -24,16 +24,12 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap_css/bootstrap.css">
-
   <!-- x3d models css -->
   <link rel='stylesheet' type='text/css' href='assets/css/x3dom.css'>
-
   <!-- Custom CSS needs to be last to override any bootstrap or x3dom css as necessary -->
   <link rel="stylesheet" href="assets/css/custom.css">
-
 </head>
 
 <body id="bodyColor">
@@ -53,26 +49,23 @@
       </div>
 
       <!--Link Menu item button to the links class navbar-collapse selector-->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div id="navbarSupportContent" class="collapse navbar-collapse">
         <!-- Links -->
         <ul class="navbar-nav ml-auto">
           <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-toggle="popover" data-trigger="hover"
-              data-placement="bottom" title="" data-content="3D Apps is a final year and postgraduate module ..."
-              data-original-title="About Web 3D Applications">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent('home')">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('about')">About</a></li>
 
           <!-- Dropdown -->
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown">Drinks</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Drinks</a>
           <ul class="dropdown-menu">
-            <li><a class="nav-item dropdown-item" id="coke" href="javascript:swapMainContent('coke')">coca cola</a></li>
-            <li><a class="nav-item dropdown-item" id="sprite" href="javascript:swapMainContent('sprite')">Sprite</a>
-            </li>
-            <li><a class="nav-item dropdown-item" id="pepper" href="javascript:swapMainContent('pepper')">Dr Pepper</a>
-            </li>
-            <li><a class="nav-item dropdown-item" id="fanta" href="javascript:swapMainContent('fanta')">Fanta</a></li>
+            <a class="dropdown-item" href="javascript:swapMainContent('Coca Cola')">coca cola</a>
+            <a class="dropdown-item" href="javascript:swapMainContent('Sprite')">Sprite</a>
+            <a class="dropdown-item" href="javascript:swapMainContent('Dr Pepper')">Dr Pepper</a>
+            <a class="dropdown-item" href="javascript:swapMainContent('Fanta')">Fanta</a>
+          </li>
           </ul>
-
           <li><a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a></li>
         </ul>
       </div>
@@ -94,10 +87,6 @@
       <div class="navbar-text float-left">
         <button onclick="javascript:changeLook();">Style</button>
         <button onclick="javascript:changeBack();">Reset style</button>
-<!--        <a href="application/view/viewDrinksPages/viewDrinks.php">Model</a>-->
-        <button onclick="javascript:getModels();">Modl</button>
-        <a href="application/view/viewDrinksPages/viewAboutPage.php">About</a>
-        <a href="application/mvc.php">MVC</a>
       </div>
 
       <!-- links to socials -->

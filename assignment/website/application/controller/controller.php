@@ -12,9 +12,7 @@ class Controller
      */
     function __construct($pageID)
     {
-        //Create new Load and Model objects
         $this->load = new Load();
-
         if ($pageID == "home"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/infoData.db");
             $this->model->dbCreateDrinkDetailsTable();
@@ -40,68 +38,82 @@ class Controller
               leading lemon and lime flavoured soft drink and is sold in more than 190 different countries. Sprite Zero,
               part of Coca Cola's no sugar Zero range, offers the delicious lemon lime taste of Sprite without the sugar
               or calories.";
-            $pepperPath = "assets/images/homepage/dr_pepper.jpg";
-            $fantaPath = "assets/images/homepage/fanta.png";
-            $cokePath = "assets/images/homepage/coca_cola.jpg";
-            $spritePath = "assets/images/homepage/sprite.jpg";
-            $this->model->dbInsertDrinkDetails(3, "Dr Pepper", $pepperText, $pepperPath);
+
+            $this->model->dbInsertDrinkDetails(3, "Dr Pepper", $pepperText, "assets/images/homepage/dr_pepper.jpg");
             $pepperDescriptionData = $this->apiGetInfo($this->model->dbGetDrinkDetails(3));
-            $this->model->dbInsertDrinkDetails(1, "Coca Cola", $cokeText, $cokePath);
+            $this->model->dbInsertDrinkDetails(1, "Coca Cola", $cokeText, "assets/images/homepage/coca_cola.jpg");
             $cokeDescriptionData = $this->apiGetInfo($this->model->dbGetDrinkDetails(1));
-            $this->model->dbInsertDrinkDetails(2, "Sprite", $spriteText, $spritePath);
+            $this->model->dbInsertDrinkDetails(2, "Sprite", $spriteText, "assets/images/homepage/sprite.jpg");
             $spriteDescriptionData = $this->apiGetInfo($this->model->dbGetDrinkDetails(2));
-            $this->model->dbInsertDrinkDetails(4, "Fanta", $fantaText, $fantaPath);
+            $this->model->dbInsertDrinkDetails(4, "Fanta", $fantaText, "assets/images/homepage/fanta.png");
             $fantaDescriptionData = $this->apiGetInfo($this->model->dbGetDrinkDetails(4));
-
-
-
 
             $viewData = ["fantaDescriptionData" => $fantaDescriptionData,"cokeDescriptionData" => $cokeDescriptionData,"spriteDescriptionData" => $spriteDescriptionData,"pepperDescriptionData"=>$pepperDescriptionData];
             $handover = ["handover"=>$viewData];
             $this->load->view($pageID, $handover);
-//            $this->load->view($pageID, $cokeDescriptionData);
-//            $this->load->view($pageID, $spriteDescriptionData);
-//            $this->load->view($pageID, $pepperDescriptionData);
+            $this->model->closeConnection();
         }
-        else if ($pageID == "coke"){
-            $cokePath = "/its/home/ed385/public_html/3dapp/assignment/website/assets/images/homepage/coca_cola.jpg";
+        else if ($pageID == "Coca Cola"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/modelData.db");
             $this->model->dbCreateModelTable();
-            $cokeModelDescription = "lala";
-            $this->model->dbInsertModelData(1, "Blender","Coca Cola", "", $cokeModelDescription, $cokePath);
-            $database = 'Model_3D';
-            $pepperModelData = $this->apiGetInfo($this->model->dbGetModelData());
-            $this->load->view($pageID, $pepperModelData, $database);
+            $this->model->dbInsertModelData(1, "Blender","Coca Cola", "assets/images/textures/can_texture.jpeg", "lala", "assets/images/3d_models/coke_bottle.x3d");
+            $cokeModelData = $this->apiGetInfo($this->model->dbGetModelData(1));
+            $this->model->closeConnection();
+
+            $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
+            $this->model->dbCreateGalleryTable();
+            $this->model->dbInsertGalleryData(1, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $cokeGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(1));
+            $viewData = ["cokeModelData" => $cokeModelData, "cokeGalleryData" => $cokeGalleryData];
+            $modelHandover = ["handover"=>$viewData];
+            $this->load->view($pageID, $modelHandover);
         }
-        else if ($pageID == "sprite"){
-            $spritePath = "/its/home/ed385/public_html/3dapp/assignment/website/assets/images/homepage/sprite.jpg";
+        else if ($pageID == "Sprite"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/modelData.db");
             $this->model->dbCreateModelTable();
-            $spriteModelDescription = "lala";
-            $this->model->dbInsertModelData(2, "Blender", "Sprite", "", $spriteModelDescription, $spritePath);
-            $database = 'Model_3D';
-            $pepperModelData = $this->apiGetInfo($this->model->dbGetModelData());
-            $this->load->view($pageID, $pepperModelData, $database);
+            $this->model->dbInsertModelData(2, "Blender", "Sprite", "", "lala", "assets/images/3d_models/coke_bottle.x3d");
+            $spriteModelData = $this->apiGetInfo($this->model->dbGetModelData(2));
+            $this->model->closeConnection();
+
+            $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
+            $this->model->dbCreateGalleryTable();
+            $this->model->dbInsertGalleryData(2, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $spriteGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(2));
+
+            $viewData = ["spriteModelData" => $spriteModelData, "spriteGalleryData" => $spriteGalleryData];
+            $modelHandover = ["handover"=>$viewData];
+            $this->load->view($pageID, $modelHandover);
+
         }
-        else if ($pageID == "fanta"){
-            $fantaPath = "/its/home/ed385/public_html/3dapp/assignment/website/assets/images/homepage/fanta.png";
+        else if ($pageID == "Fanta"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/modelData.db");
             $this->model->dbCreateModelTable();
-            $fantaModelDescription = "lala";
-            $this->model->dbInsertModelData(4, "Blender", "Fanta", "", $fantaModelDescription , $fantaPath);
-            $pepperModelData = $this->apiGetInfo($this->model->dbGetModelData());
-            $database = 'Model_3D';
-            $this->load->view($pageID, $pepperModelData, $database);
+            $this->model->dbInsertModelData(4, "Blender", "Fanta", "", "lala" , "assets/images/3d_models/coke_bottle.x3d");
+            $fantaModelData = $this->apiGetInfo($this->model->dbGetModelData(4));
+            $this->model->closeConnection();
+
+            $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
+            $this->model->dbCreateGalleryTable();
+            $this->model->dbInsertGalleryData(4, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $fantaGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(4));
+            $viewData = ["fantaModelData" => $fantaModelData, "fantaGalleryData" => $fantaGalleryData];
+            $modelHandover = ["handover"=>$viewData];
+            $this->load->view($pageID, $modelHandover);
         }
-        else if ($pageID == "pepper"){
-            $pepperPath = "/its/home/ed385/public_html/3dapp/assignment/website/assets/images/homepage/dr_pepper.jpg";
+        else if ($pageID == "Dr Pepper"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/modelData.db");
             $this->model->dbCreateModelTable();
-            $pepperModelDescription = "lala";
-            $this->model->dbInsertModelData(3, "Blender","Pepper", "", $pepperModelDescription, $pepperPath);
-            $pepperModelData = $this->apiGetInfo($this->model->dbGetModelData());
-            $database = 'Model_3D';
-            $this->load->view($pageID, $pepperModelData, $database);
+            $this->model->dbInsertModelData(3, "Blender","Pepper", "", "lala", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $pepperModelData = $this->apiGetInfo($this->model->dbGetModelData(3));
+            $this->model->closeConnection();
+
+            $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
+            $this->model->dbCreateGalleryTable();
+            $this->model->dbInsertGalleryData(3, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $pepperGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(3));
+            $viewData = ["pepperModelData" => $pepperModelData, "pepperGalleryData" => $pepperGalleryData];
+            $modelHandover = ["handover"=>$viewData];
+            $this->load->view($pageID, $modelHandover);
         }
         else{
             echo "error in controller constructor. Wrong call id";

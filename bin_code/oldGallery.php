@@ -38,7 +38,6 @@
         .carousel-inner img {
             width: 100%;
             height: 100%;
-            /*padding: auto;*/
         }
     </style>
 
@@ -48,6 +47,9 @@
 
 
 <body id="cocaColaPage">
+
+
+
 <!-- This is the coke page-->
 <div class="container-fluid main_contents">
     <!--row to hold two cards to hold 1) the X3D model and 2) the gallery-->
@@ -71,7 +73,7 @@
                                 <Transform>
                                     <inline nameSpaceName="ModelCoke" mapDEFToID="true"
                                             url="/its/home/ed385/public_html/3dapp/assignment/website/assets/images/3d_models/coke_bottle.x3d"></inline>
-<!--                                    <ImageTexture url='"can_texture.jpeg"'/> -->
+                                    <!--                                    <ImageTexture url='"can_texture.jpeg"'/> -->
                                     <navigationInfo type='"walk" "any"' id="navType"></navigationInfo>
 
                                     <Viewpoint id="front" position="-0.07427 0.95329 -2.79608"
@@ -171,6 +173,7 @@
 
     </div>
 </div>
+
 
 <script type='text/javascript' src='https://www.x3dom.org/x3dom/release/x3dom.js'></script>
 
