@@ -3,13 +3,13 @@
 
 
 function changeColor() {
-	if (document.getElementById('ModelCoke__WO_World').getAttribute('groundColor') == '0.051 0.051 0.051' && document.getElementById('ModelCoke__WO_World').getAttribute('skyColor') == '0.051 0.051 0.051') {
-		document.getElementById('ModelCoke__WO_World').setAttribute('groundColor', '0.700 0.700 0.700');
-		document.getElementById('ModelCoke__WO_World').setAttribute('skyColor', '1.00 1.00 1.00');
+	if (document.getElementById('Model__WO_World').getAttribute('groundColor') == '0.051 0.051 0.051' && document.getElementById('Model__WO_World').getAttribute('skyColor') == '0.051 0.051 0.051') {
+		document.getElementById('Model__WO_World').setAttribute('groundColor', '0.700 0.700 0.700');
+		document.getElementById('Model__WO_World').setAttribute('skyColor', '1.00 1.00 1.00');
 	}
 	else {
-		document.getElementById('ModelCoke__WO_World').setAttribute('groundColor', '0.051 0.051 0.051');
-		document.getElementById('ModelCoke__WO_World').setAttribute('skyColor', '0.051 0.051 0.051');
+		document.getElementById('Model__WO_World').setAttribute('groundColor', '0.051 0.051 0.051');
+		document.getElementById('Model__WO_World').setAttribute('skyColor', '0.051 0.051 0.051');
 	}
 }
 
@@ -21,35 +21,31 @@ function hello() {
 }
 
 function hello1() {
-	document.getElementById('ModelCoke__Cylinder_TRANSFORM').setAttribute('translation', '0.000000 1.000000 0.000000');
-	document.getElementById('ModelCoke__Cylinder_TRANSFORM').setAttribute('scale', '1.000000 1.000000 1.000000');
-	document.getElementById('ModelCoke__Cylinder_TRANSFORM').setAttribute('rotation', '0.000000 0.707107 0.707107 3.141593');
+	document.getElementById('Model__Cylinder_TRANSFORM').setAttribute('translation', '0.000000 1.000000 0.000000');
+	document.getElementById('Model__Cylinder_TRANSFORM').setAttribute('scale', '1.000000 1.000000 1.000000');
+	document.getElementById('Model__Cylinder_TRANSFORM').setAttribute('rotation', '0.000000 0.707107 0.707107 3.141593');
 }
-
-
-
-
 
 function spin() {
 	var spinning = false;
 	spinning = !spinning;
-	document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
+	document.getElementById('Model__RotationTimer').setAttribute('enabled', spinning.toString());
 }
 
 function stopRotation() {
 	spinning = false;
-	document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
+	document.getElementById('Model__RotationTimer').setAttribute('enabled', spinning.toString());
 }
 
 function animateModel() {
-	if (document.getElementById('model__RotationTimer').getAttribute('enabled') != 'true')
-		document.getElementById('model__RotationTimer').setAttribute('enabled', 'true');
+	if (document.getElementById('Model__RotationTimer').getAttribute('enabled') != 'true')
+		document.getElementById('Model__RotationTimer').setAttribute('enabled', 'true');
 	else
-		document.getElementById('model__RotationTimer').setAttribute('enabled', 'false');
+		document.getElementById('Model__RotationTimer').setAttribute('enabled', 'false');
 }
 
 function wireframe() {
-	var e = document.getElementById('model');
+	var e = document.getElementById('Model');
 	e.runtime.togglePoints(true);
 	e.runtime.togglePoints(true);
 }
@@ -58,29 +54,29 @@ var lightOn = true;
 
 function headlight() {
 	lightOn = !lightOn;
-	document.getElementById('model__headlight').setAttribute('headlight', lightOn.toString());
+	document.getElementById('Model__headlight').setAttribute('headlight', lightOn.toString());
 }
 
 function cameraFront() {
-	document.getElementById('model__CameraFront').setAttribute('bind', 'true');
+	document.getElementById('Model__CameraFront').setAttribute('bind', 'true');
 }
 
 function cameraBack() {
-	document.getElementById('model__CameraBack').setAttribute('bind', 'true');
+	document.getElementById('Model__CameraBack').setAttribute('bind', 'true');
 }
 
 function cameraLeft() {
-	document.getElementById('model__CameraLeft').setAttribute('bind', 'true');
+	document.getElementById('Model__CameraLeft').setAttribute('bind', 'true');
 }
 
 function cameraRight() {
-	document.getElementById('model__CameraRight').setAttribute('bind', 'true');
+	document.getElementById('Model__CameraRight').setAttribute('bind', 'true');
 }
 
 function cameraTop() {
-	document.getElementById('model__CameraTop').setAttribute('bind', 'true');
+	document.getElementById('Model__CameraTop').setAttribute('bind', 'true');
 }
 
 function cameraBottom() {
-	document.getElementById('model__CameraBottom').setAttribute('bind', 'true');
+	document.getElementById('Model__CameraBottom').setAttribute('bind', 'true');
 }

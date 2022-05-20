@@ -55,7 +55,7 @@ class Model
     {
         try {
             $this->handle->exec("DROP TABLE IF EXISTS Gallery;");
-            $this->handle->exec("CREATE TABLE IF NOT EXISTS Gallery (ID INTEGER PRIMARY KEY, galleryTitle TEXT NOT NULL, carouselText TEXT NOT NULL, galleryText TEXT NOT NULL, imagePath TEXT NOT NULL);");
+            $this->handle->exec("CREATE TABLE IF NOT EXISTS Gallery (ID INTEGER PRIMARY KEY, galleryTitle TEXT NOT NULL, carouselText TEXT NOT NULL, galleryText TEXT NOT NULL, imagePath TEXT NOT NULL, modelAnimationPath TEXT NOT NULL, galleryGeneratorPath TEXT NOT NULL);");
         } catch (PDOException $e) {
             print new Exception($e->getMessage()."\n");
         }
@@ -79,10 +79,10 @@ class Model
         }
     }
 
-    public function dbInsertGalleryData($ID, $galleryTitle, $carouselText, $galleryText, $imagePath)
+    public function dbInsertGalleryData($ID, $galleryTitle, $carouselText, $galleryText, $imagePath, $modelAnimationPath, $galleryGeneratorPath)
     {
         try {
-            $this->handle->exec("INSERT INTO Gallery (ID, galleryTitle, carouselText, galleryText, imagePath) VALUES (\"$ID\", \"galleryTitle\", \"$carouselText\", \"$galleryText\", \"$imagePath\");");
+            $this->handle->exec("INSERT INTO Gallery (ID, galleryTitle, carouselText, galleryText, imagePath, modelAnimationPath, galleryGeneratorPath) VALUES (\"$ID\", \"$galleryTitle\", \"$carouselText\", \"$galleryText\", \"$imagePath\", \"$modelAnimationPath\", \"$galleryGeneratorPath\");");
         } catch (PDOException $e) {
             print new Exception($e->getMessage()."\n");
         }
@@ -145,6 +145,8 @@ class Model
                     $result['carouselText'] = $data['carouselText'];
                     $result['galleryText'] = $data['galleryText'];
                     $result['imagePath'] = $data['imagePath'];
+                    $result['modelAnimationPath'] = $data['modelAnimationPath'];
+                    $result['galleryGeneratorPath'] = $data['galleryGeneratorPath'];
                     $i++;
                 }
                 $this->setResult($result);

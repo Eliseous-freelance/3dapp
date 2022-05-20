@@ -3,7 +3,7 @@
     <div class="row">
         <!-- Coca Cola Column -->
         <div class="col-sm-12">
-            <div class="card">
+            <div class="card" style="border-style: none;">
                 <div class="card-body">
                     <h3 class="card-title">Coca Cola</h3>
                     <p class="card-text">Atlanta Beginners: It was 1886, and in New York Harbour, workers were constructing the
@@ -14,7 +14,6 @@
                         sampled by customers who all agreed
                         - this new drink was something special.
                         So, Jacobs' Pharmacy put it on sale for five cents (about 3p) a glass.</p>
-                    <a href="#" class="btn btn-primary">Find out more...</a>
                 </div>
             </div>
         </div>

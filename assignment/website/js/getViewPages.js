@@ -10,6 +10,7 @@ function swapMainContent(page){
         document.getElementById('mainContents').innerHTML = htmlCode;
     }))
 }
+
 window.onload = function runMVC() {
     swapMainContent("home");
 }

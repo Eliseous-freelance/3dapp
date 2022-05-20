@@ -58,62 +58,64 @@ class Controller
             $this->model->dbCreateModelTable();
             $this->model->dbInsertModelData(1, "Blender","Coca Cola", "assets/images/textures/can_texture.jpeg", "lala", "assets/images/3d_models/coke_bottle.x3d");
             $cokeModelData = $this->apiGetInfo($this->model->dbGetModelData(1));
-            $this->model->closeConnection();
 
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
             $this->model->dbCreateGalleryTable();
-            $this->model->dbInsertGalleryData(1, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $this->model->dbInsertGalleryData(1, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/coca_cola.jpg", "js/models_animation/animations.js", "gallery/gallery_generator.js");
             $cokeGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(1));
-            $viewData = ["cokeModelData" => $cokeModelData, "cokeGalleryData" => $cokeGalleryData];
+            $viewData = ["cokeModelData" => $cokeModelData, "galleryData" => $cokeGalleryData];
             $modelHandover = ["handover"=>$viewData];
             $this->load->view($pageID, $modelHandover);
+            $this->model->closeConnection();
         }
         else if ($pageID == "Sprite"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/modelData.db");
             $this->model->dbCreateModelTable();
-            $this->model->dbInsertModelData(2, "Blender", "Sprite", "", "lala", "assets/images/3d_models/coke_bottle.x3d");
+            $this->model->dbInsertModelData(2, "Blender", "Sprite", "lala", "lala", "assets/images/3d_models/coke_bottle.x3d");
             $spriteModelData = $this->apiGetInfo($this->model->dbGetModelData(2));
-            $this->model->closeConnection();
 
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
             $this->model->dbCreateGalleryTable();
-            $this->model->dbInsertGalleryData(2, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $this->model->dbInsertGalleryData(2, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/sprite.jpg", "js/models_animation/animations.js", "gallery/gallery_generator.js");
             $spriteGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(2));
 
-            $viewData = ["spriteModelData" => $spriteModelData, "spriteGalleryData" => $spriteGalleryData];
+            $viewData = ["spriteModelData" => $spriteModelData, "galleryData" => $spriteGalleryData];
             $modelHandover = ["handover"=>$viewData];
             $this->load->view($pageID, $modelHandover);
-
+            $this->model->closeConnection();
         }
         else if ($pageID == "Fanta"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/modelData.db");
             $this->model->dbCreateModelTable();
-            $this->model->dbInsertModelData(4, "Blender", "Fanta", "", "lala" , "assets/images/3d_models/coke_bottle.x3d");
+            $this->model->dbInsertModelData(4, "Blender", "Fanta", "lala", "lala" , "assets/images/3d_models/coke_bottle.x3d");
             $fantaModelData = $this->apiGetInfo($this->model->dbGetModelData(4));
-            $this->model->closeConnection();
 
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
             $this->model->dbCreateGalleryTable();
-            $this->model->dbInsertGalleryData(4, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $this->model->dbInsertGalleryData(4, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/fanta.png", "js/models_animation/animations.js", "gallery/gallery_generator.js");
             $fantaGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(4));
-            $viewData = ["fantaModelData" => $fantaModelData, "fantaGalleryData" => $fantaGalleryData];
+            $viewData = ["fantaModelData" => $fantaModelData, "galleryData" => $fantaGalleryData];
             $modelHandover = ["handover"=>$viewData];
             $this->load->view($pageID, $modelHandover);
+            $this->model->closeConnection();
         }
         else if ($pageID == "Dr Pepper"){
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/modelData.db");
             $this->model->dbCreateModelTable();
-            $this->model->dbInsertModelData(3, "Blender","Pepper", "", "lala", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $this->model->dbInsertModelData(3, "Blender","Pepper", "lala", "lala", "gallery/assets/images/homepage/dr_pepper.jpg");
             $pepperModelData = $this->apiGetInfo($this->model->dbGetModelData(3));
-            $this->model->closeConnection();
 
             $this->model = new Model("sqlite:/its/home/ed385/public_html/3dapp/assignment/website/application/db/gallery.db");
             $this->model->dbCreateGalleryTable();
-            $this->model->dbInsertGalleryData(3, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/homepage/dr_pepper.jpg");
+            $this->model->dbInsertGalleryData(3, "3D Image Gallery", "These 3D images of the Fanta can, Coke bottle, Sprite bottle and Costa Coffee cup are rendered using Blender", "3D images of models rendered in Blender", "gallery/assets/images/dr_pepper.jpg", "js/models_animation/animations.js", "gallery/gallery_generator.js");
             $pepperGalleryData = $this->apiGetInfo($this->model->dbGetGalleryData(3));
-            $viewData = ["pepperModelData" => $pepperModelData, "pepperGalleryData" => $pepperGalleryData];
+            $viewData = ["pepperModelData" => $pepperModelData, "galleryData" => $pepperGalleryData];
             $modelHandover = ["handover"=>$viewData];
             $this->load->view($pageID, $modelHandover);
+            $this->model->closeConnection();
+        }
+        else if ($pageID == "about"){
+            $this->load->view($pageID);
         }
         else{
             echo "error in controller constructor. Wrong call id";

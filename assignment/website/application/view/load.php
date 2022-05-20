@@ -5,10 +5,10 @@ class Load{
             extract($data);
         }
         if ($file_name == "Coca Cola" || $file_name == "Sprite" || $file_name == "Fanta" || $file_name == "Dr Pepper") {
-            $file_name = "gallery";
             include '/its/home/ed385/public_html/3dapp/assignment/website/application/view/viewDrinksPages/' . $file_name . '.php';
+            include '/its/home/ed385/public_html/3dapp/assignment/website/application/view/viewDrinksPages/gallery.php';
         }
-        else if($file_name == "about" || $file_name == "home"){
+    else if($file_name == "about" || $file_name == "home"){
             include '/its/home/ed385/public_html/3dapp/assignment/website/application/view/viewDrinksPages/' . $file_name . '.php';
         }
     }
