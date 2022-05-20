@@ -23,13 +23,13 @@ foreach($handover as $k => $v){
     echo '
     <div class="col-xs-12 col-sm-6">
         <div class="card" style="border-style: none;">
-            <a href="#"><img class="card-img-top img-fluid img-thumbnail" class="border-0" class="img-fluid" src="'.$v["imagePath"].'"
+            <a href="javascript:swapMainContent('.$v["title"].')"><img class="card-img-top img-fluid img-thumbnail" class="border-0" class="img-fluid" src="'.$v["imagePath"].'"
                              alt="'.$v["title"].'"></a>
             <div class="card-body"><!---->
                 <h3 class="card-title"">'.$v["title"].'</h3>
                 <p class="card-text">'.$v["description"].'</p>
             </div>
-            <a href="javascript:swapMainContent(\''.$v["title"].'\')" class="btn btn-primary">Find out more...</a>
+            <a href="javascript:swapMainContent('.$v["title"].')" class="btn btn-primary">Find out more...</a>
         </div>
     </div>
         ';
@@ -42,3 +42,5 @@ if($i>0 && ($i%2)!=0){
     echo '</div>';
 }
 ?>
+
+

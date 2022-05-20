@@ -1,0 +1,148 @@
+
+.navbar_coca_cola {
+    background-color: rgba(175,0,0,1); /* Set navbar background color */
+    border-width: 0px;
+    min-height: 70px;
+}
+
+.navbar_coca_cola .navbar-brand {
+    color: rgb(245, 235, 235);
+}
+
+.navbar_coca_cola .navbar-brand:hover {
+    color: greenyellow;
+}
+
+.navbar_coca_cola .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar_coca_cola .navbar-nav > li > a:hover,
+.navbar_coca_cola .navbar-nav > li > a:focus {
+    color: greenyellow;
+}
+
+.navbar_coca_cola .navbar-nav .nav-item {
+    margin-top: 0px;
+}
+
+/* CSS rule to overwrite the bootstrap.css rules for setting the active font color and background colour
+*/
+.navbar_coca_cola .navbar-nav .nav-item > .active,
+.navbar_coca_cola .navbar-nav > .active > a:hover,
+.navbar_coca_cola .navbar-nav > .active > a:focus {
+    color:  rgba(175,0,0,1); /* Font color for active font */
+    background-color: rgba(182, 231, 243, 1.0); /* Blue color for background */
+}
+
+.navbar_coca_cola .navbar-nav > li > a:hover,
+.navbar_coca_cola  .navbar-nav > li > a:focus {
+    color: greenyellow;
+}
+/* These next two CSS rules control the style of the icon bar */
+.navbar_coca_cola .navbar-toggler {
+    border-color: white;
+}
+
+.navbar_coca_cola  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu {
+    text-align: -webkit-left;
+    background-color: rgba(182, 231, 243, 1.0);
+    margin-top: 20px;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #eb0025;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(182, 231, 243, 1.0);
+}
+
+.navbar_coca_cola .navbar-toggler {
+    outline: none !important;
+}
+
+.navbar-text > a {
+    font-size: 10px;
+}
+
+.navbar-text > p {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+@media (min-width: 576px) {
+
+
+    .navbar-text > a {
+        font-size: 10px;
+    }
+
+    .navbar-text > p {
+        color: rgb(228, 75, 15);
+        font-size: 18px;
+    }
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        color:  rgba(175,0,0,1); /* Font color for active font */
+        background-color: rgba(198,231,243,1.0); /* Blue color for background */
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+
+    .nav-tabs .nav-link {
+        color: white;
+        border: 1px solid transparent;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+    }
+
+    /* Added this to emulate the nav-bar link styling */
+    .nav-tabs .nav-link:hover {
+        color: greenyellow;
+        border: 1px solid transparent;
+    }
+}

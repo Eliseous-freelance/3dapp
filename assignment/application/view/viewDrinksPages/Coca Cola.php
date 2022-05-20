@@ -32,15 +32,10 @@ echo '
 <!-- This is the coke page-->
 <div class="container-fluid main_contents">
     <!--row to hold two cards to hold 1) the X3D model and 2) the gallery-->
-    
-    
     <div class="row">
         <!--column to hold teh X3D model-->
         <div class="col-xs-10 col-sm-8">
-        
-           
             <div class="card text-left">
-            
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent(' . $coke . ')">Coke</a></li>
