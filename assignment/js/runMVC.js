@@ -7,8 +7,12 @@ function swapMainContent(page){
         {
             htmlCode += `${text[i]}`;
         }
-        document.getElementById('mainContents').innerHTML = htmlCode;
-    }))
+
+
+        document.getElementById("mainContents").innerHTML = htmlCode;
+
+
+    }));
 }
 
 window.onload = function runMVC() {

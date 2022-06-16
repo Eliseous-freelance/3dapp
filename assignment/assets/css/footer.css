@@ -1,0 +1,43 @@
+
+.footer {
+    color: #030303;
+    background-color: rgba(0, 102, 153, 1);
+    height: 50px;
+}
+
+.social {
+    padding-top: 0px;
+    width: 30%;
+}
+
+@media (min-width: 576px) {
+
+    .footer {
+        background-color: rgba(0, 102, 153, 1);
+        height: 60px;
+        padding-top: 7px;
+    }
+
+    .social {
+        padding-top: 0px;
+        width: 30%;
+    }
+
+    .fa-github-square:before {
+        content: "\f092";
+        color: yellow;
+        font-size: 1em;
+    }
+
+    .fa-google-plus-square:before {
+        content: "\f0d4";
+        color: red;
+        font-size: 1em;
+    }
+
+    .fa-facebook-square:before {
+        content: "\f082";
+        color: blue;
+        font-size: 1em;
+    }
+}

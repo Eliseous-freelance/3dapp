@@ -29,6 +29,7 @@ const loadScript = (FILE_URL, async = true, type = "text/javascript") => {
 
 function loadLib()
 {
+
     loadScript("js/models_animation/animations.js")
         .then(data => {
             console.log("Script loaded successfully", data);
@@ -45,14 +46,7 @@ function loadLib()
             console.error(err);
         });
 
-    loadScript("js/x3dom.js")
-        .then(data => {
-            console.log("Script loaded successfully", data);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    loadScript("js/getViewPages.js")
+    loadScript("js/librariesAndFrameworks/x3dom.js")
         .then(data => {
             console.log("Script loaded successfully", data);
         })
@@ -60,4 +54,13 @@ function loadLib()
             console.error(err);
         });
 
+    loadScript("js/runMVC.js")
+        .then(data => {
+            console.log("Script loaded successfully", data);
+        })
+        .catch(err => {
+            console.error(err);
+        });
 }
+
+

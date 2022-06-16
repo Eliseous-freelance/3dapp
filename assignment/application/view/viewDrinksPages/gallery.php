@@ -80,7 +80,7 @@ echo '
             </div>
             <div class="card text-left" style="border-style: none;">
                 <div class="card-header gallery-header">
-                    <h1 onclick="loadLib();loadLibrary()">Gallery</h1>
+                    <h1>Gallery</h1>
                 </div>
                 <div class="card-body">
                     <div id="gallery_images">

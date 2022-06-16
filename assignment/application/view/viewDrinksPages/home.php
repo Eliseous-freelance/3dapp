@@ -22,7 +22,7 @@ foreach($handover as $k => $v){
     }
     echo '
     <div class="col-xs-12 col-sm-6">
-        <div class="card" style="border-style: none;">
+        <div class="card" style="border-style: none; height: 100%;">
             <a href="javascript:swapMainContent('.$v["title"].')"><img class="card-img-top img-fluid img-thumbnail" class="border-0" class="img-fluid" src="'.$v["imagePath"].'"
                              alt="'.$v["title"].'"></a>
             <div class="card-body"><!---->

@@ -23,7 +23,7 @@ foreach ($handover['fantaModelData'] as $key => $value) {
 $coke = "Coca Cola";
 $fanta = "Fanta";
 $sprite = "Sprite";
-$pepper = "Dr Pepper";
+$costa = "Costa";
 echo ' <p>This X3D model has been created in Blender and converted to X3D
                 for display online.</p';
 echo '
@@ -38,7 +38,7 @@ echo '
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $coke . ')">Coke</a></li>
                         <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $sprite . ')">Sprite</a></li>
-                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $pepper . ')">Dr Pepper</a></li>
+                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $costa . ')">Costa</a></li>
                         <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent(' . $fanta . ')">Fanta</a></li>
                     </ul>
                 </div>
@@ -95,3 +95,5 @@ echo '
 
 
 ?>
+
+

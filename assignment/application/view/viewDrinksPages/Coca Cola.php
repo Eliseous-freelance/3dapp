@@ -24,29 +24,27 @@ foreach ($handover['cokeModelData'] as $key => $value) {
 $coke = "Coca Cola";
 $fanta = "Fanta";
 $sprite = "Sprite";
-$pepper = "Dr Pepper";
+$costa = "Costa";
 
 echo ' <p>This X3D model has been created in Blender and converted to X3D
                 for display online.</p';
+
+
+
 echo '
-<!-- This is the coke page-->
 <div class="container-fluid main_contents">
-    <!--row to hold two cards to hold 1) the X3D model and 2) the gallery-->
     <div class="row">
-        <!--column to hold teh X3D model-->
         <div class="col-xs-10 col-sm-8">
             <div class="card text-left">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent(' . $coke . ')">Coke</a></li>
-                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $sprite . ')">Sprite</a></li>
-                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $pepper . ')">Dr Pepper</a></li>
-                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $fanta . ')">Fanta</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent('.$coke.')">Coke</a></li>
+                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('.$sprite.')">Sprite</a></li>
+                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('.$costa.')">Costa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('.$fanta.')">Fanta</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- X3D model -->
             <div class="card-body">
                 <x3d width="500px" height="400px">
                     <scene>
@@ -73,7 +71,7 @@ echo '
                 </div>
         <div class="camera-btns">
             <div class="btn-group ">
-                <a onclick="loadLib()" class="btn btn-primary btn-responsive">View</a>
+                <a id="activateOnLoad" onclick="loadLib()" class="btn btn-primary btn-responsive">View</a>
                 <a href="javascript:changeView()" class="btn btn-primary btn-responsive">Front</a>
                 <a href="javascript:changeView()" class="btn btn-secondary btn-responsive">Back</a>
 
@@ -87,11 +85,8 @@ echo '
                    class="btn btn-outline-dark disabled btn-responsive camera-font">Off</a>
             </div>
         </div>
-    </div>
-
-        ';
+    </div>';
 
 
 
 ?>
-<!--<ImageTexture url="can_label.png"/>-->

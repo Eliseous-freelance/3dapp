@@ -7,7 +7,7 @@ $modelTitle="";
 $modelDescription="";
 $modelTexture="";
 $modelPath="";
-foreach ($handover['pepperModelData'] as $key => $value) {
+foreach ($handover['costaModelData'] as $key => $value) {
     if ($key == 'creationMethod') {
         $creationMethod = $value;
     } else if ($key == 'modelTitle') {
@@ -24,7 +24,7 @@ foreach ($handover['pepperModelData'] as $key => $value) {
 $coke = "Coca Cola";
 $fanta = "Fanta";
 $sprite = "Sprite";
-$pepper = "Dr Pepper";
+$costa = "Costa";
 echo ' <p>This X3D model has been created in Blender and converted to X3D
                 for display online.</p';
 echo '
@@ -39,7 +39,7 @@ echo '
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $coke . ')">Coke</a></li>
                         <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $sprite . ')">Sprite</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent(' . $pepper . ')">Dr Pepper</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent(' . $costa . ')">Costa</a></li>
                         <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent(' . $fanta . ')">Fanta</a></li>
                     </ul>
                 </div>
@@ -52,7 +52,6 @@ echo '
                         <Transform>
                             <inline nameSpaceName="Model" mapDEFToID="true"
                                     url="' . $modelPath . '"></inline>
-                            <ImageTexture url="can_texture.jpeg"/>
                             <navigationInfo type=' . ".walk." . "any" . ' id="navType"></navigationInfo>
                             <Viewpoint id="front" position="-0.07427 0.95329 -2.79608"
                                        orientation="-0.01451 0.99989 0.00319 3.15833"

@@ -14,28 +14,18 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://findicons.com/files/icons/917/soda_pop_caps/128/coca_cola.png"/>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <meta charset="utf-8">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-            crossorigin="anonymous"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/librariesAndFrameworks/bootstrap_css/bootstrap.css">
     <!-- Custom CSS needs to be last to override any bootstrap or x3dom css as necessary -->
     <link rel="stylesheet" href="assets/css/custom.css">
-<!--Navigation bar style-->
-    <link rel="stylesheet" href="assets/css/navigationBar.css">
+    <!--  Footer style-->
+    <link rel="stylesheet" href="assets/css/footer.css">
     <!-- x3d models css -->
     <link rel="stylesheet" type="text/css" href="assets/css/x3dom.css">
 </head>
@@ -47,37 +37,33 @@
 
         <!-- Brand/logo -->
         <div class="logo">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="javascript:swapMainContent('home')">
                 <h1>1</h1>
                 <h1>oca</h1>
-                <h2 id="brand">Cola</h2>
+                <h2>Cola</h2>
                 <h3>Journey</h3>
                 <p>Refreshing the world, one story at a time</p>
             </a>
         </div>
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
+            <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('home')">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('about')">About</a></li>
 
-        <!--Link Menu item button to the links class navbar-collapse selector-->
-        <div id="navbarSupportContent" class="collapse navbar-collapse">
-            <!-- Links -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Use mx-auto to align centre, default to the left or use mr-auto, these are used pull-right-->
-                <li class="nav-item"><a class="nav-link active" href="javascript:swapMainContent('home')">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="javascript:swapMainContent('about')">About</a></li>
-
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Drinks</a>
-                    <ul class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:swapMainContent('Coca Cola')">coca
-                            cola</a>
-                        <a class="dropdown-item" href="javascript:swapMainContent('Sprite')">Sprite</a>
-                        <a class="dropdown-item" href="javascript:swapMainContent('Dr Pepper')">Dr
-                            Pepper</a>
-                        <a class="dropdown-item" href="javascript:swapMainContent('Fanta')">Fanta</a>
-                        </li>
-                    </ul>
-            </ul>
-        </div>
+            <!-- Dropdown -->
+            <li class="dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"
+                                    href="#">Drinks</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="javascript:swapMainContent('Coca Cola')">coca
+                        cola</a></li>
+                    <li><a class="dropdown-item" href="javascript:swapMainContent('Sprite')">Sprite</a></li>
+                    <li><a class="dropdown-item" href="javascript:swapMainContent('Costa')">Costa</a></li>
+                    <li><a class="dropdown-item" href="javascript:swapMainContent('Fanta')">Fanta</a>
+                    </li>
+                </ul>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="popover" data-bs-placement="bottom" title="Email address: ed385@sussex.ac.uk" href="#">Contact</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -92,10 +78,15 @@ followed by 2 rows of 2 columns holding cards for the 4 images and associated te
 <!--3D App footer-->
 <nav class="navbar navbar-expand-sm footer" id="footerColor">
     <div class="container-fluid">
+        <h2 style="padding-right: 10px">&copy;</h2>
         <!-- Style and reset style buttons-->
-        <div class="navbar-text float-left">
-            <button style="border-color: red; background-color: red;" onclick="javascript:changeLook()">Style</button>
-            <button style="border-color: red; background-color: red;" onclick="javascript:changeBack()">Reset style</button>
+        <div id="buttons" class="navbar-text float-left">
+            <button style="border: none;" style="background-color: rgba(0, 102, 153, 1);"
+                    onclick="javascript:changeLook()">Style
+            </button>
+            <button style="border: none;" style="background-color: rgba(0, 102, 153, 1);"
+                    onclick="javascript:changeBack()">Reset style
+            </button>
         </div>
 
         <!-- links to socials -->
@@ -114,10 +105,10 @@ followed by 2 rows of 2 columns holding cards for the 4 images and associated te
 <!--Font Awesome 5-->
 <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
 <!-- style changes JavaScript -->
-<script type="text/javascript" src="js/contentSwap.js"></script>
+<script type="text/javascript" src="js/changeSyles.js"></script>
 
 <!-- load mvc model Javascript -->
-<script type="text/javascript" src="js/getViewPages.js"></script>
+<script type="text/javascript" src="js/runMVC.js"></script>
 <!-- Jquery popover function -->
 <script type="text/javascript" src="js/librariesAndFrameworks/popover.js"></script>
 
